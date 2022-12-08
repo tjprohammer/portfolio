@@ -1,12 +1,13 @@
-import { Button } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import React from "react";
+import LandingPage from "./Pages/LandingPage";
+import { darktheme } from "./useTheme";
 
 const App = () => {
   return (
-    <h1>
-      TJ Prohammer Portfolio
-      <Button variant="text">Text</Button>
-    </h1>
+    <ThemeProvider theme={darktheme}>
+      <LandingPage />
+    </ThemeProvider>
   );
 };
 
