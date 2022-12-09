@@ -1,14 +1,12 @@
 import React from 'react';
-import { App } from './App';
+import App from './App';
 import { createRoot } from 'react-dom/client';
 
-declare namespace JSX {
-    interface IntrinsicElements {
-      tab: string;
-    }
-  }
-
-const container = document.getElementById('app');
-if (container){
-    createRoot(container).render(<App tab='App' />);
+const container = document.getElementById('root');
+if (container) {
+    createRoot(container).render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+    );
 }

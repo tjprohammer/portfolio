@@ -1,7 +1,18 @@
-import * as React from "react";
 
-export const App: React.FC = () => (
-  <h1 color='primary'>
-    Testing
-  </h1>
-);
+import ToggleColorMode from './Context/ThemeContext'
+import React from 'react'
+import LandingPage from './Pages/LandingPage'
+ './Pages/LandingPage'
+
+
+const App = () => {
+  return (
+    <>
+      <ToggleColorMode />
+        <LandingPage />
+
+    </>
+  )
+}
+
+export default App

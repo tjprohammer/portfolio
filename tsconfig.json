@@ -12,6 +12,7 @@
       "noImplicitReturns": true,
       "noUnusedLocals": true,
       "strict": true,
+      "checkJs": true,
       "outDir": "build",
       "lib": ["es6", "es7", "dom"],
       "baseUrl": "src",
