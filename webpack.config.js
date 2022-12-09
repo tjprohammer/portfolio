@@ -6,7 +6,7 @@ module.exports = {
     output: { path: path.join(__dirname, 'build'), filename: 'index.bundle.js' },
     mode: 'development',
     resolve: {
-        extensions: ['.tsx', '.ts', '.js', '.jsx']
+        extensions: ['.tsx', '.ts', '.js']
     },
     devServer: { static: path.join(__dirname, 'src'), port: 5000 },
     module: {

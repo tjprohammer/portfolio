@@ -1,5 +1,14 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { App } from "./App";
+import React from 'react';
+import { App } from './App';
+import { createRoot } from 'react-dom/client';
 
-ReactDOM.render(<App />, document.getElementById("root") as HTMLElement);
+declare namespace JSX {
+    interface IntrinsicElements {
+      tab: string;
+    }
+  }
+
+const container = document.getElementById('app');
+if (container){
+    createRoot(container).render(<App tab='App' />);
+}
