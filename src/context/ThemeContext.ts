@@ -48,7 +48,23 @@ export const lightTheme: ThemeOptions = {
     typography: {
         h1: {
             fontFamily: 'Josefin Slab',
-            fontWeight: 500
+            fontWeight: 600
+        },
+        h2: {
+            fontFamily: 'Josefin Slab',
+            fontWeight: 300
+        },
+        h3: {
+            fontFamily: 'Josefin Slab',
+            fontWeight: 200
+        },
+        h4: {
+            fontFamily: 'Josefin Slab',
+            fontWeight: 400
+        },
+        h5: {
+            fontFamily: 'Josefin Slab',
+            fontWeight: 300
         },
         fontFamily: 'Playfair Display',
         fontWeightBold: 700,
@@ -70,9 +86,6 @@ export const lightTheme: ThemeOptions = {
         overline: {
             fontFamily: 'Raleway'
         },
-        h2: {
-            fontWeight: 500
-        }
     }
 };
 
@@ -112,7 +125,23 @@ export const darkTheme: ThemeOptions = {
     typography: {
         h1: {
             fontFamily: 'Josefin Slab',
-            fontWeight: 500
+            fontWeight: 600
+        },
+        h2: {
+            fontFamily: 'Josefin Slab',
+            fontWeight: 300
+        },
+        h3: {
+            fontFamily: 'Josefin Slab',
+            fontWeight: 200
+        },
+        h4: {
+            fontFamily: 'Josefin Slab',
+            fontWeight: 400
+        },
+        h5: {
+            fontFamily: 'Josefin Slab',
+            fontWeight: 300
         },
         fontFamily: 'Playfair Display',
         fontWeightBold: 700,
@@ -134,8 +163,5 @@ export const darkTheme: ThemeOptions = {
         overline: {
             fontFamily: 'Raleway'
         },
-        h2: {
-            fontWeight: 500
-        }
     }
 };

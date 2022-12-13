@@ -6,8 +6,8 @@ import {
   } from "@mui/material";
 import { ColorContext, darkTheme, lightTheme} from './context/ThemeContext';
 import React from 'react';
-import LandingPage from './Pages/LandingPage';
 import { SwitchModeButton } from "./components/SwitchThemeButton/SwitchModeButton";
+import NavBar from "./components/navBar/NavBar";
 
 const App = () => {
     const [mode, setMode] = React.useState<PaletteMode>('light');
@@ -28,7 +28,8 @@ const App = () => {
             <ThemeProvider theme={theme}>
                 <CssBaseline enableColorScheme />
                 <SwitchModeButton />
-                <LandingPage />
+                <NavBar open={open} setOpen={setOpen} />
+                
             </ThemeProvider>
         </ColorContext.Provider>
     );
