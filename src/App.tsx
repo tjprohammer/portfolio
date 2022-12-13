@@ -7,7 +7,7 @@ import {
 import { ColorContext, darkTheme, lightTheme} from './context/ThemeContext';
 import React from 'react';
 import { SwitchModeButton } from "./components/SwitchThemeButton/SwitchModeButton";
-import NavBar from "./components/navBar/NavBar";
+import NavBar from "./components/navBar/Menu";
 
 const App = () => {
     const [mode, setMode] = React.useState<PaletteMode>('light');
@@ -28,7 +28,7 @@ const App = () => {
             <ThemeProvider theme={theme}>
                 <CssBaseline enableColorScheme />
                 <SwitchModeButton />
-                <NavBar open={open} setOpen={setOpen} />
+                <NavBar/>
                 
             </ThemeProvider>
         </ColorContext.Provider>
