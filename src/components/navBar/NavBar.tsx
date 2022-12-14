@@ -1,5 +1,5 @@
 import React from 'react';
-import BurgerMenu from './Burger';
+import Burger from './Burger';
 import { Transition } from 'framer-motion';
 
 type Props = {
@@ -14,11 +14,17 @@ type Props = {
     onClick: React.MouseEventHandler;
 };
 
-function NavBar({height, width, onClick}: Props) {
+function NavBar({height, width}: Props) {
     const [open, setOpen] = React.useState(false);
+    const ref = React.useRef(null);
+    const onClick = () => {
+        if (ref.current) {
+        setOpen(!open)
+        }
+      };
     return (
-        <div>
-            <BurgerMenu open={open} setOpen={setOpen} height={height} width={width} onClick={onClick} />
+        <div ref={ref}>
+            <Burger open={open} setOpen={setOpen} height={height} width={width} onClick={onClick}  />
         </div>
     );
 }
