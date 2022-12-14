@@ -9,7 +9,9 @@ import React from 'react';
 import { SwitchModeButton } from "./components/SwitchThemeButton/SwitchModeButton";
 import NavBar from "./components/navBar/Menu";
 
-const App = () => {
+
+
+function App({}) {
     const [mode, setMode] = React.useState<PaletteMode>('light');
     const colorMode = React.useMemo(
         () => ({
@@ -26,10 +28,10 @@ const App = () => {
     return (
         <ColorContext.Provider value={colorMode}>
             <ThemeProvider theme={theme}>
-                <CssBaseline enableColorScheme />
+                <CssBaseline enableColorScheme >
                 <SwitchModeButton />
-                <NavBar/>
-                
+                <NavBar />
+                </CssBaseline>
             </ThemeProvider>
         </ColorContext.Provider>
     );
