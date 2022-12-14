@@ -1,5 +1,6 @@
 import React from 'react';
 import {BurgerMenu} from './BurgerMenu';
+import MenuItems from './MenuItems';
 
 type Props = { 
 
@@ -7,15 +8,14 @@ type Props = {
 
 
 function NavBar({}: Props) {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(true);
 
     const canvasStyle = {
       display: "flex",
-      width: "100vw",
-      height: "100vh",
       alignItems: "start",
       justifyContent: "left",
-      marginLeft: '1em'
+      margin: '1em 0 1em 1em',
+      zIndex: '9999'
     };
   
 
@@ -31,7 +31,12 @@ function NavBar({}: Props) {
           transition={{ type: "spring", stiffness: 300, damping: 50 }}
           width={28}
           height={24}
+          
+          
         />
+        {open && (
+          <MenuItems name="name" to="to" id={1} open={open} />
+        )}
       </div>
     );
   }

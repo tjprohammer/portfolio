@@ -70,6 +70,8 @@ const BurgerMenu = ({
       preserveAspectRatio="none"
       width={width}
       height={height}
+      style={{ zIndex: '9999'}}
+      
       {...props}
     >
       <motion.line
