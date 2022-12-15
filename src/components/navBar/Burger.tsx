@@ -3,7 +3,6 @@ import { motion, Transition } from 'framer-motion';
 
 interface Props {
     open?: boolean;
-    setOpen: (v: boolean) => void;
     color?: string;
     strokeWidth?: string | number;
     transition?: Transition;

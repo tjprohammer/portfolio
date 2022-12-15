@@ -1,26 +1,31 @@
 import React from 'react';
-import Burger  from './Burger';
+import Burger from './Burger';
+import useOnClickOutside from '../../hooks/useOutsideClick'
 
 import MenuItems from './MenuItems';
 
 type Props = {};
 
 function Menu({}: Props) {
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
+    const ref = React.useRef(null);
+
+    useOnClickOutside(ref, () => setOpen(false));
+
 
     const canvasStyle = {
         display: 'flex',
         alignItems: 'start',
         justifyContent: 'left',
         margin: '1em 0 1em 1em',
-        zIndex: '9999'
+        zIndex: '9999',
+        width: '50%',
     };
 
     return (
-        <div style={canvasStyle}>
+        <div style={canvasStyle} ref={ref} >
             <Burger
                 open={open}
-                setOpen={setOpen}
                 onClick={() => setOpen(!open)}
                 strokeWidth="5"
                 color="teal"
@@ -29,7 +34,10 @@ function Menu({}: Props) {
                 width={28}
                 height={24}
             />
-            {open && <MenuItems name="name" to="to" id={1} open={open} />}
+            {
+            open && 
+                <MenuItems name="name" to="to" id={1} open={open} />
+            }
         </div>
     );
 }

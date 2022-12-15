@@ -4,7 +4,6 @@ import { Transition } from 'framer-motion';
 
 type Props = {
     open?: boolean;
-    setOpen: (v: boolean) => void;
     color?: string;
     strokeWidth?: string | number;
     transition?: Transition;
@@ -14,18 +13,19 @@ type Props = {
     onClick: React.MouseEventHandler;
 };
 
-function NavBar({height, width}: Props) {
+function NavBar({height, width, onClick}: Props) {
     const [open, setOpen] = React.useState(false);
-    const ref = React.useRef(null);
-    const onClick = () => {
-        if (ref.current) {
-        setOpen(!open)
-        }
-      };
+
+    React.useEffect(() => {
+      setOpen(!open);
+    }, [open])
+
     return (
-        <div ref={ref}>
-            <Burger open={open} setOpen={setOpen} height={height} width={width} onClick={onClick}  />
+      open && (
+        <div >
+            <Burger open={open} height={height} width={width} onClick={onClick} />
         </div>
+        )
     );
 }
 
