@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-    ThemeOptions,
+    createTheme,
 } from '@mui/material';
+import { Theme } from '@emotion/react';
 
 interface ColorContextSchema {
     toggleColorMode: () => void;
@@ -11,15 +12,19 @@ export const ColorContext = React.createContext<ColorContextSchema>(
     {} as ColorContextSchema
 );
 
-export const lightTheme: ThemeOptions = {
+export const lightTheme: Theme = createTheme({
     palette: {
         mode: 'light',
         primary: {
             main: '#577590',
+            light: '#7890a6',
+             dark: '#3c5164',
             contrastText: '#ffffff'
         },
         secondary: {
             main: '#43AA8B',
+            light: '#68bba2',
+            dark: '#2e7661',
             contrastText: '#ffffff'
         },
         error: {
@@ -44,6 +49,7 @@ export const lightTheme: ThemeOptions = {
             paper: '#ffffff'
         }
     },
+
 
     typography: {
         h1: {
@@ -87,9 +93,9 @@ export const lightTheme: ThemeOptions = {
             fontFamily: 'Raleway'
         },
     }
-};
+});
 
-export const darkTheme: ThemeOptions = {
+export const darkTheme: Theme = {
     palette: {
         mode: 'dark',
         primary: {

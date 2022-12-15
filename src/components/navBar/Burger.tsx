@@ -17,7 +17,7 @@ const Burger = ({
     width = 24,
     height = 24,
     strokeWidth = 1,
-    color = 'primary',
+    color = 'primary.dark',
     transition = null as any,
     lineProps = null,
     ...props

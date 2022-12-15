@@ -7,7 +7,7 @@ import MenuItems from './MenuItems';
 type Props = {};
 
 function Menu({}: Props) {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(true);
     const ref = React.useRef(null);
 
     useOnClickOutside(ref, () => setOpen(false));
@@ -28,7 +28,7 @@ function Menu({}: Props) {
                 open={open}
                 onClick={() => setOpen(!open)}
                 strokeWidth="5"
-                color="teal"
+                color="#3c5164"
                 lineProps={{ strokeLinecap: 'round' }}
                 transition={{ type: 'spring', stiffness: 300, damping: 50 }}
                 width={28}
