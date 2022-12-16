@@ -1,20 +1,24 @@
-import { Typography } from '@mui/material';
+
+import { Box, Typography } from '@mui/material';
 import React from 'react';
 
 function LandingPage() {
     return (
         <>
-
-                <Typography variant='h1' color="primary">TJ Prohammer Portfolio</Typography>
-                <Typography variant='h2' color="primary">TJ Prohammer Portfolio</Typography>
-                <Typography variant='h3' color="primary">TJ Prohammer Portfolio</Typography>
-                <Typography variant='h4' color="primary">TJ Prohammer Portfolio</Typography>
-                <Typography variant='h5' color="primary">TJ Prohammer Portfolio</Typography>
-                <Typography variant='subtitle1' color="secondary">Resume Attached</Typography>
-                <Typography variant='h4' color="secondary">Testing</Typography>
-                
-
-
+            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2', columnGap: '3'}}>
+                <Typography
+                    variant="h4"
+                    color="primary.dark"
+                    sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    TJ Prohammer Portfolio
+                </Typography>
+                <Typography
+                    variant="h4"
+                    color="primary.dark"
+                    sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    TJ Prohammer Portfolio
+                </Typography>
+            </Box>
         </>
     );
 }

@@ -7,7 +7,7 @@ import MenuItems from './MenuItems';
 type Props = {};
 
 function Menu({}: Props) {
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
     const ref = React.useRef(null);
 
     useOnClickOutside(ref, () => setOpen(false));
