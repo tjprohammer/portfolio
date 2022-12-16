@@ -6,7 +6,7 @@ import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import { NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 type MenuItemsProps = {
     name: string;
@@ -22,39 +22,44 @@ const MenuItems = (props: MenuItemsProps) => {
                 <NavCircleBehind>
                     <FlexContainer>
                         <AnimatedFontWrap>
-                            
-                                <FontWrap>
-                                    <CottageOutlinedIcon
-                                        sx={{ color: '#3c5164', marginRight: '.5em' }}
-                                    />
+                            <FontWrap>
+                                <CottageOutlinedIcon
+                                    sx={{ color: '#3c5164', marginRight: '.5em' }}
+                                />
+                                <NavLinkTo to="/">
                                     <TypoText variant="h5" color="text.primary">
-                                    <NavLinkTo to="/">
                                         Home
-                                        </NavLinkTo>
                                     </TypoText>
-                                </FontWrap>
-                            
+                                </NavLinkTo>
+                            </FontWrap>
+
                             <FontWrap>
                                 <EmojiPeopleOutlinedIcon
                                     sx={{ color: '#3c5164', marginRight: '.5em' }}
                                 />
-                                <TypoText variant="h5" color="text.primary">
-                                    About
-                                </TypoText>
+                                <NavLinkTo to="/about">
+                                    <TypoText variant="h5" color="text.primary">
+                                        About
+                                    </TypoText>
+                                </NavLinkTo>
                             </FontWrap>
                             <FontWrap>
                                 <FormatListBulletedOutlinedIcon
                                     sx={{ color: '#3c5164', marginRight: '.7em' }}
                                 />
-                                <TypoText variant="h5" color="text.primary">
-                                    Skills
-                                </TypoText>
+                                <NavLinkTo to="/skills">
+                                    <TypoText variant="h5" color="text.primary">
+                                        Skills
+                                    </TypoText>
+                                </NavLinkTo>
                             </FontWrap>
                             <FontWrap>
                                 <EmailOutlinedIcon sx={{ color: '#3c5164', marginRight: '.3em' }} />
-                                <TypoText variant="h5" color="text.primary">
-                                    Contact
-                                </TypoText>
+                                <NavLinkTo to="/contact">
+                                    <TypoText variant="h5" color="text.primary">
+                                        Contact
+                                    </TypoText>
+                                </NavLinkTo>
                             </FontWrap>
                         </AnimatedFontWrap>
                     </FlexContainer>
@@ -122,18 +127,18 @@ const AnimatedFontWrap = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    animation: 1.8s cubic-bezier(0.29, -.1, 0.8, 1.1) .88s 1 normal forwards running
+    animation: 1.8s cubic-bezier(0.29, -0.1, 0.8, 1.1) 0.88s 1 normal forwards running
         ${menuTextChildsIn};
 `;
 const FontWrap = styled.div`
-    margin: 0.5em 0 0.5em 0;
+    margin: 0.5em 0.5em 0.5em 0.5em;
     display: inline-flex;
     text-align: justify;
     align-items: center;
     justify-content: space-between;
 `;
 
-const NavLinkTo = styled(NavLink)`
+const NavLinkTo = styled(Link)`
     text-decoration: none;
     color: white;
 `;
@@ -142,6 +147,7 @@ const TypoText = styled(Typography)`
     cursor: pointer;
     position: relative;
     text-decoration: none;
+    vertical-align: middle;
 
     :hover {
         font-size: 1.6em;

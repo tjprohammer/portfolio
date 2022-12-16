@@ -1,11 +1,16 @@
-
-import { Box, Typography } from '@mui/material';
 import React from 'react';
+import { Box, Typography } from '@mui/material';
 
 function LandingPage() {
     return (
         <>
-            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2', columnGap: '3'}}>
+            <Box
+                sx={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(2, 1fr)',
+                    gap: '2',
+                    columnGap: '3'
+                }}>
                 <Typography
                     variant="h4"
                     color="primary.dark"
