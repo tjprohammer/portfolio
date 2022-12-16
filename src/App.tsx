@@ -8,6 +8,8 @@ import { ColorContext, darkTheme, lightTheme} from './context/ThemeContext';
 import React from 'react';
 import { SwitchModeButton } from "./components/SwitchThemeButton/SwitchModeButton";
 import NavBar from "./components/navBar/Menu";
+import LandingPage from "./Pages/LandingPage";
+import { Route, Routes } from "react-router-dom";
 
 
 
@@ -31,6 +33,9 @@ function App({}) {
                 <CssBaseline enableColorScheme >
                 <SwitchModeButton />
                 <NavBar />
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                </Routes>
                 </CssBaseline>
             </ThemeProvider>
         </ColorContext.Provider>

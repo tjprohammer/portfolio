@@ -95,7 +95,7 @@ export const lightTheme: Theme = createTheme({
     }
 });
 
-export const darkTheme: Theme = {
+export const darkTheme: Theme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
@@ -170,4 +170,4 @@ export const darkTheme: Theme = {
             fontFamily: 'Raleway'
         },
     }
-};
+});

@@ -2,6 +2,11 @@ import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Typography } from '@mui/material';
 import React from 'react';
+import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
+import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
+import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { NavLink} from 'react-router-dom';
 
 type MenuItemsProps = {
     name: string;
@@ -17,35 +22,37 @@ const MenuItems = (props: MenuItemsProps) => {
                 <NavCircleBehind>
                     <FlexContainer>
                         <AnimatedFontWrap>
+                            
+                                <FontWrap>
+                                    <CottageOutlinedIcon
+                                        sx={{ color: '#3c5164', marginRight: '.5em' }}
+                                    />
+                                    <TypoText variant="h5" color="text.primary">
+                                    <NavLinkTo to="/">
+                                        Home
+                                        </NavLinkTo>
+                                    </TypoText>
+                                </FontWrap>
+                            
                             <FontWrap>
-                                <TypoText
-                                    variant="h5"
-                                    color="primary.dark"
-                                    >
-                                    Home
-                                </TypoText>
-                            </FontWrap>
-                            <FontWrap>
-                                <TypoText
-                                    variant="h5"
-                                    color="primary.dark"
-                                    >
+                                <EmojiPeopleOutlinedIcon
+                                    sx={{ color: '#3c5164', marginRight: '.5em' }}
+                                />
+                                <TypoText variant="h5" color="text.primary">
                                     About
                                 </TypoText>
                             </FontWrap>
                             <FontWrap>
-                                <TypoText
-                                    variant="h5"
-                                    color="primary.dark"
-                                    >
+                                <FormatListBulletedOutlinedIcon
+                                    sx={{ color: '#3c5164', marginRight: '.7em' }}
+                                />
+                                <TypoText variant="h5" color="text.primary">
                                     Skills
                                 </TypoText>
                             </FontWrap>
                             <FontWrap>
-                                <TypoText
-                                    variant="h5"
-                                    color="primary.dark"
-                                    >
+                                <EmailOutlinedIcon sx={{ color: '#3c5164', marginRight: '.3em' }} />
+                                <TypoText variant="h5" color="text.primary">
                                     Contact
                                 </TypoText>
                             </FontWrap>
@@ -115,7 +122,8 @@ const AnimatedFontWrap = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    animation: 1.8s ease 1.3s normal forwards running ${menuTextChildsIn};
+    animation: 1.8s cubic-bezier(0.29, -.1, 0.8, 1.1) .88s 1 normal forwards running
+        ${menuTextChildsIn};
 `;
 const FontWrap = styled.div`
     margin: 0.5em 0 0.5em 0;
@@ -125,11 +133,17 @@ const FontWrap = styled.div`
     justify-content: space-between;
 `;
 
+const NavLinkTo = styled(NavLink)`
+    text-decoration: none;
+    color: white;
+`;
+
 const TypoText = styled(Typography)`
     cursor: pointer;
     position: relative;
+    text-decoration: none;
 
-    :hover{
+    :hover {
         font-size: 1.6em;
         text-decoration: underline;
     }
