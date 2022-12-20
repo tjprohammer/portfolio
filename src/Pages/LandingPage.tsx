@@ -1,15 +1,15 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-// import SvgAnimation from '../components/SVGAnimation/SvgAnimation';
-
-
+import SvgAnimation from '../components/SVGAnimation/SvgAnimation';
+import Container from '@mui/material/Container';
+// import logo from '../../assets/logo-svg.svg'
 
 function LandingPage() {
     return (
         <>
             <Box
-            
                 sx={{
+                    width: '100vw',
                     height: '88vh',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(2, 1fr)',
@@ -23,9 +23,10 @@ function LandingPage() {
                     sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     TJ Prohammer Portfolio
                 </Typography>
-                {/* <SvgAnimation /> */}
-             
-
+                {/* <img src={logo} /> */}
+                <Container>
+                    <SvgAnimation />
+                </Container>
             </Box>
         </>
     );

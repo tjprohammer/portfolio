@@ -42,15 +42,38 @@ const SvgAnimation = () => {
         strokeLinejoin: 'round',
         strokeLinecap: 'round'
         }}
-        fill="none"
-        d="M40 40 L80 40 C80 40 80 80 40 80 C40 80 0 80 0 40 C0 40 0 0 40 0Z"
+        d="M111 83H392V298H111V83Z" 
+        fill="url(#pattern0)"
         variants={pathVariants}
       />
       <motion.path
-        fill="none"
-        d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z"
+        d="M30 0H509V479H30V0Z" 
+        fill="url(#pattern1)"
         variants={pathVariants}
       />
+      <motion.path
+       d="M122 287H440V420H122V287Z" 
+       fill="url(#pattern3)"
+        variants={pathVariants}
+      />
+      <motion.path
+      stroke="white"
+       d="M0.777771 180.656H484.852V437.266H0.777771V180.656Z" 
+       fill="url(#pattern2)"
+        variants={pathVariants}
+      />
+      <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image0_0_1" transform="scale(0.0021097)"/>
+</pattern>
+<pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image1_0_1" transform="scale(0.00362319 0.00485437)"/>
+</pattern>
+<pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image2_0_1" transform="scale(0.0019685 0.00377358)"/>
+</pattern>
+<pattern id="pattern3" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlinkHref="#image3_0_1" transform="scale(0.00319489 0.0078125)"/>
+</pattern>
     </motion.svg>
   </div>
   <motion.div className="title"
@@ -62,5 +85,7 @@ const SvgAnimation = () => {
   </div>
   )
 }
+
+
 
 export default SvgAnimation
