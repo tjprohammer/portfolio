@@ -8,6 +8,7 @@ import LandingPage from './Pages/LandingPage';
 import About from './Pages/About';
 import Skills from './Pages/Skills';
 import Contact from './Pages/Contact';
+import "./app.css";
 
 function App({}) {
     const [mode, setMode] = React.useState<PaletteMode>('light');

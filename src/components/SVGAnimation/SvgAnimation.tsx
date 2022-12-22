@@ -37,7 +37,7 @@ const SvgAnimation = () => {
         height: 'auto',
         width: '80px',
         overflow: 'visible',
-        stroke:'#fff',
+        stroke:'#000000',
         strokeWidth: '4',
         strokeLinejoin: 'round',
         strokeLinecap: 'round'

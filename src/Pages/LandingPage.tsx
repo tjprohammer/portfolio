@@ -1,34 +1,66 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
-import SvgAnimation from '../components/SVGAnimation/SvgAnimation';
-import Container from '@mui/material/Container';
-// import logo from '../../assets/logo-svg.svg'
+import logo from '../../assets/logo-svg.svg';
+import { Button, ButtonBase, Container, Grid, Typography } from '@mui/material';
 
 function LandingPage() {
     return (
-        <>
-            <Box
+        <Container
+            sx={{
+                pt: 16,
+                margin: 'auto',
+                alignItems: 'center',
+                justifyContent: 'center',
+                display: 'flex'
+            }}>
+            <Grid
+                container
+                spacing={2}
+                xs={12}
+                sm={12}
+                md={7}
+                lg={7}
                 sx={{
-                    width: '100vw',
-                    height: '88vh',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(2, 1fr)',
-                    gap: '2',
-                    columnGap: '3',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    display: 'flex'
                 }}>
-                <Typography
-                    variant="h4"
-                    color="primary.dark"
-                    sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    TJ Prohammer Portfolio
-                </Typography>
-                {/* <img src={logo} /> */}
-                <Container>
-                    <SvgAnimation />
-                </Container>
-            </Box>
-        </>
+                <Grid item xs={12} md container>
+                    <Grid item xs container direction="column" spacing={2}>
+                        <Grid
+                            item
+                            xs
+                            sx={{
+                                textAlign: 'center'
+                            }}>
+                            <Typography gutterBottom variant="h3">
+                                TJ Prohammer Portfolio
+                            </Typography>
+                            <Typography variant="subtitle1" gutterBottom>
+                                A deep understanding of systems and 
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            item
+                            sx={{
+                                textAlign: 'center'
+                            }}>
+                            <Button variant="contained" color="secondary" sx={{ mr: 2 }}>
+                                About
+                            </Button>
+
+                            <Button variant="contained" color="primary">
+                                About
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item>
+                    <ButtonBase sx={{ width: 300, height: 300, alignItems: 'center' }}>
+                        <img alt="logo" src={logo} style={{ height: '300px' }} />
+                    </ButtonBase>
+                </Grid>
+            </Grid>
+        </Container>
     );
 }
 
