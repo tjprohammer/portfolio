@@ -11,7 +11,7 @@ import Contact from './Pages/Contact';
 import "./app.css";
 
 function App({}) {
-    const [mode, setMode] = React.useState<PaletteMode>('light');
+    const [mode, setMode] = React.useState<PaletteMode>('dark');
     const colorMode = React.useMemo(
         () => ({
             toggleColorMode: () => {

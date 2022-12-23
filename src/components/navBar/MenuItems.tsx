@@ -118,7 +118,7 @@ const FlexContainer = styled.div`
     align-items: center;
     flex-direction: column;
     width: 100%;
-    z-index: 0;
+    z-index: 9999;
     visibility: hidden;
 `;
 const AnimatedFontWrap = styled.div`
@@ -170,7 +170,7 @@ const NavCircle = styled.div`
     background-color: #577590;
     top: -51.5016px;
     right: 52.6212px;
-    z-index: 999;
+    z-index: 99999;
     animation: 1s ease 0s 1 normal forwards running ${menuWrapperIn};
 `;
 const NavCircleBehind = styled.div`
