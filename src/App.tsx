@@ -3,12 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 import { ColorContext, darkTheme, lightTheme } from './context/ThemeContext';
 import React from 'react';
 import { SwitchModeButton } from './components/SwitchThemeButton/SwitchModeButton';
-import NavBar from './components/navBar/Menu';
+
 import LandingPage from './Pages/LandingPage';
 import About from './Pages/About';
 import Skills from './Pages/Skills';
 import Contact from './Pages/Contact';
 import "./app.css";
+import NavBar from './components/navBar/NavBar';
 
 function App({}) {
     const [mode, setMode] = React.useState<PaletteMode>('dark');
@@ -26,7 +27,7 @@ function App({}) {
     );
     return (
         <ColorContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme} >
                 <CssBaseline enableColorScheme>
                     <SwitchModeButton />
                     <NavBar />

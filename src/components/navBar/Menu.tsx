@@ -10,6 +10,7 @@ function Menu({}: Props) {
     const [open, setOpen] = React.useState(false);
     const ref = React.useRef(null);
 
+
     useOnClickOutside(ref, () => setOpen(false));
 
 
@@ -24,6 +25,7 @@ function Menu({}: Props) {
 
     return (
         <div style={canvasStyle} ref={ref} >
+
             <Burger
                 open={open}
                 onClick={() => setOpen(!open)}

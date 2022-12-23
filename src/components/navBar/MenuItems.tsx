@@ -138,7 +138,7 @@ const FontWrap = styled.div`
     justify-content: space-between;
 `;
 
-const NavLinkTo = styled(Link)`
+export const NavLinkTo = styled(Link)`
     text-decoration: none;
     color: white;
 `;

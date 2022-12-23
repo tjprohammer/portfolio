@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from '../../assets/logo-svg.svg';
-import {  ButtonBase, Container, Grid, Typography } from '@mui/material';
+import { ButtonBase, Container, Grid, Typography } from '@mui/material';
 import styled from '@emotion/styled';
 
 function LandingPage() {
     return (
-        <Container 
+        <Container
             sx={{
                 pt: 12,
                 margin: 'auto',
@@ -15,6 +15,7 @@ function LandingPage() {
                 height: '75vh'
             }}>
             <Grid
+                item
                 container
                 spacing={2}
                 xs={12}
@@ -35,35 +36,52 @@ function LandingPage() {
                 }}>
                 <Grid item md>
                     <Grid
-                        direction="column"
-                        spacing={2}
                         sx={{
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
                         {/** TEXT */}
-                        <Grid item >
-                            <Container sx={{flexDirection: 'column', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                            <Typography gutterBottom variant="h3" style={{display: 'flex',  textAlign: 'center', alignItems: 'center'}}>
-                                TJ Prohammer Portfolio
-                            </Typography>
-                            <Line />
-                            <Typography
-                                variant="body1"
-                                gutterBottom
-                                style={{display: 'flex',  textAlign: 'center', alignItems: 'center'}}>
-                                A deep understanding of systems and
-                            </Typography>
+                        <Grid item>
+                            <Container
+                                sx={{
+                                    flexDirection: 'column',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}>
+                                <Typography
+                                    gutterBottom
+                                    variant="h3"
+                                    style={{
+                                        display: 'flex',
+                                        textAlign: 'center',
+                                        alignItems: 'center'
+                                    }}>
+                                    TJ Prohammer Portfolio
+                                </Typography>
+                                <Line />
+                                <Typography
+                                    variant="body1"
+                                    gutterBottom
+                                    style={{
+                                        display: 'flex',
+                                        textAlign: 'center',
+                                        alignItems: 'center'
+                                    }}>
+                                    A deep understanding of systems and
+                                </Typography>
                             </Container>
                         </Grid>
-                        
                     </Grid>
-
                 </Grid>
                 <Grid item>
                     <ButtonBase sx={{ width: 300, height: 300, alignItems: 'center' }}>
-                        <img alt="logo" src={logo} style={{ height: '300px', position: 'relative' }} />
+                        <img
+                            alt="logo"
+                            src={logo}
+                            style={{ height: '300px', position: 'relative' }}
+                        />
                     </ButtonBase>
                 </Grid>
             </Grid>
@@ -78,7 +96,6 @@ const Line = styled.span`
     background-color: #43aa8b;
     width: 12em;
     display: flex;
-
 `;
 
 export default LandingPage;

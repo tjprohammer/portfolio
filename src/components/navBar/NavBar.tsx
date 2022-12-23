@@ -1,32 +1,18 @@
 import React from 'react';
-import Burger from './Burger';
-import { Transition } from 'framer-motion';
+import NavBarMobile from './NavBarMobile';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import Menu from './Menu';
 
 type Props = {
-    open?: boolean;
-    color?: string;
-    strokeWidth?: string | number;
-    transition?: Transition;
-    lineProps?: any;
-    width: number;
-    height: number;
-    onClick: React.MouseEventHandler;
+
 };
 
-function NavBar({height, width, onClick}: Props) {
-    const [open, setOpen] = React.useState(false);
+function NavBar({}: Props) {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-    React.useEffect(() => {
-      setOpen(!open);
-    }, [open])
-
-    return (
-      open && (
-        <div >
-            <Burger open={open} height={height} width={width} onClick={onClick} />
-        </div>
-        )
-    );
+    return <div>{isMobile ? <NavBarMobile /> :  <Menu />}</div>;
 }
 
 export default NavBar;
