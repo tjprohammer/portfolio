@@ -6,15 +6,89 @@ import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBullet
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { Link } from 'react-router-dom';
 import { Fab } from '@mui/material';
-type Props = {};
+import { motion } from 'framer-motion';
 
+type Props = {
+    defaultIndex?: number;
+};
 
+const tabs = [
+    {
+        title: 'Home',
+        id: 'home',
+        icon: (
+            <Fab size="medium" color="primary" sx={{ mb: 1 }}>
+                <Link to="/">
+                    <CottageOutlinedIcon sx={{ mt: 1 }} />
+                </Link>
+            </Fab>
+        )
+    },
+    {
+        title: 'About',
+        id: 'about',
+        icon: (
+            <Fab size="medium" color="primary" sx={{ mb: 1 }}>
+                <Link to="/about">
+                    <EmojiPeopleOutlinedIcon color="info" sx={{ mt: 1 }} />
+                </Link>
+            </Fab>
+        )
+    },
+    {
+        title: 'Skills',
+        id: 'skills',
+        icon: (
+            <Fab size="medium" color="primary" sx={{ mb: 1 }}>
+                <Link to="/skills">
+                    <FormatListBulletedOutlinedIcon color="success" sx={{ mt: 1 }} />
+                </Link>
+            </Fab>
+        )
+    },
+    {
+        title: 'Contact',
+        id: 'contact',
+        icon: (
+            <Fab size="medium" color="primary" sx={{ mb: 1 }}>
+                <Link to="/contact">
+                    <EmailOutlinedIcon sx={{ mt: 1 }} />
+                </Link>
+            </Fab>
+        )
+    }
+];
 
-function NavBarMobile({}: Props) {
+const variants = {
+    visible: {
+        opacity: 1,
+        transition: {
+          when: "beforeChildren",
+          staggerChildren: 0.3,
+        },
+      },
+      hidden: {
+        opacity: 0,
+        transition: {
+          when: "afterChildren",
+        },
+      },
+    }
 
+function NavBarMobile({ defaultIndex = 0 }: Props) {
+    const [activeTab, setActiveTab] = React.useState(defaultIndex);
+
+    const onTabClick = (tab) => {
+        const tabIdClick = tabs.findIndex(
+            (tab) => `#${tab.id}` === tab.id
+        )
+        setActiveTab(tabIdClick !== -1 ? tabIdClick : defaultIndex);
+        console.log(tab.id)
+    };
+    //if current index is active then set styles to button
     return (
         <AppBar
-        color="primary"
+            color="primary"
             sx={{
                 top: 'auto',
                 bottom: 0,
@@ -23,28 +97,18 @@ function NavBarMobile({}: Props) {
                 flexDirection: 'row',
                 justifyContent: 'space-evenly'
             }}>
-
-
-            <Fab size="medium" color="primary" sx={{mb: 1}}>
-                <Link to="/">
-                    <CottageOutlinedIcon  sx={{mt: 1}} />
-                </Link>
-            </Fab>
-            <Fab size="medium" color="primary" sx={{mb: 1}}>
-                <Link to="/about">
-                    <EmojiPeopleOutlinedIcon color="info" sx={{mt: 1}}  />
-                </Link>
-            </Fab>
-            <Fab size="medium" color="primary" sx={{mb: 1}}>
-                <Link to="/skills">
-                    <FormatListBulletedOutlinedIcon color="success" sx={{mt: 1}} />
-                </Link>
-            </Fab>
-            <Fab size="medium" color="primary" sx={{mb: 1}}>
-                <Link to="/contact">
-                    <EmailOutlinedIcon color="warning" sx={{mt: 1}} />
-                </Link>
-            </Fab>
+            {tabs.map((tab, index) => (
+                <motion.div
+                    key={tab.id}
+                    whileHover={{ scale: 1.2 }}
+                    onHoverStart={(e) => {}}
+                    onHoverEnd={(e) => {}}
+                    variants={variants}
+                    animate={activeTab === index ? 'active' : 'inactive'}
+                    onClick={() => onTabClick(index)}>
+                    {tab.icon}
+                </motion.div>
+            ))}
         </AppBar>
     );
 }
