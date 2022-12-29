@@ -4,57 +4,47 @@ import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import { NavLinkTo } from './MenuItems';
-
+import { Link } from 'react-router-dom';
+import { Fab } from '@mui/material';
 type Props = {};
 
+
+
 function NavBarMobile({}: Props) {
+
     return (
         <AppBar
+        color="primary"
             sx={{
                 top: 'auto',
                 bottom: 0,
-                pt: 1
+                pt: 1,
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-evenly'
             }}>
-            <Container
-                sx={{
-                    top: 'auto',
-                    bottom: 0,
-                    flexGrow: 1,
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    display: 'flex'
-                }}>
-                <Button>
-                    <NavLinkTo to="/">
-                        <CottageOutlinedIcon 
-                            sx={{ color: 'secondary.light', marginRight: '.5em' }}
-                        />
-                    </NavLinkTo>
-                </Button>
 
-                <Button>
-                    <NavLinkTo to="/about">
-                        <EmojiPeopleOutlinedIcon
-                            sx={{ color: 'secondary.light', marginRight: '.5em' }}
-                        />
-                    </NavLinkTo>
-                </Button>
-                <Button>
-                    <NavLinkTo to="/skills">
-                        <FormatListBulletedOutlinedIcon
-                            sx={{ color: 'secondary.light', marginRight: '.7em' }}
-                        />
-                    </NavLinkTo>
-                </Button>
-                <Button>
-                    <NavLinkTo to="/contact">
-                        <EmailOutlinedIcon sx={{ color: 'secondary.light', marginRight: '.3em' }} />
-                    </NavLinkTo>
-                </Button>
-            </Container>
+
+            <Fab size="medium" color="primary" sx={{mb: 1}}>
+                <Link to="/">
+                    <CottageOutlinedIcon  sx={{mt: 1}} />
+                </Link>
+            </Fab>
+            <Fab size="medium" color="primary" sx={{mb: 1}}>
+                <Link to="/about">
+                    <EmojiPeopleOutlinedIcon color="info" sx={{mt: 1}}  />
+                </Link>
+            </Fab>
+            <Fab size="medium" color="primary" sx={{mb: 1}}>
+                <Link to="/skills">
+                    <FormatListBulletedOutlinedIcon color="success" sx={{mt: 1}} />
+                </Link>
+            </Fab>
+            <Fab size="medium" color="primary" sx={{mb: 1}}>
+                <Link to="/contact">
+                    <EmailOutlinedIcon color="warning" sx={{mt: 1}} />
+                </Link>
+            </Fab>
         </AppBar>
     );
 }

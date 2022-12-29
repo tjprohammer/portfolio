@@ -7,7 +7,7 @@ function LandingPage() {
     return (
         <Container
             sx={{
-                pt: 12,
+                pt: 8,
                 margin: 'auto',
                 alignItems: 'center',
                 justifyContent: 'space-around',

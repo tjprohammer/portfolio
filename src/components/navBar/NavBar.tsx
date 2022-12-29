@@ -4,11 +4,9 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import Menu from './Menu';
 
-type Props = {
 
-};
 
-function NavBar({}: Props) {
+function NavBar() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 

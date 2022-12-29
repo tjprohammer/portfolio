@@ -3,12 +3,14 @@ const path = require('path');
 
 module.exports = {
     entry: './src/index.tsx',
-    output: { path: path.join(__dirname, 'build'), filename: 'index.bundle.js' },
+    output: { path: path.join(__dirname, 'build'), filename: 'index.bundle.js', publicPath: '/' },
+    
     mode: 'development',
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
     },
-    devServer: { static: path.join(__dirname, 'src'), port: 5000 },
+    devServer: { static: path.join(__dirname, 'src'), port: 5000, historyApiFallback: true },
+    
     module: {
         rules: [
             {
@@ -33,7 +35,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'public', 'index.html')
+            template: path.join(__dirname, 'public', '/index.html')
         })
     ]
 };
