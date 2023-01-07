@@ -17,7 +17,7 @@ const Burger = ({
     width = 24,
     height = 24,
     strokeWidth = 1,
-    color = 'primary.dark',
+    color = 'primary',
     transition = null as any,
     lineProps = null,
     ...props
@@ -70,7 +70,7 @@ const Burger = ({
             preserveAspectRatio="none"
             width={width}
             height={height}
-            style={{ zIndex: '9999' }}
+            style={{ zIndex: '9999', cursor: 'pointer' }}
             {...props}>
             <motion.line x1="0" x2={unitWidth} y1="0" y2="0" variants={top} {...lineProps} />
             <motion.line x1="2" x2={unitWidth} y1="2" y2="2" variants={center} {...lineProps} />

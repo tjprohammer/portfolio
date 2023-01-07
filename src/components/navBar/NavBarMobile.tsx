@@ -6,7 +6,7 @@ import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBullet
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { Link } from 'react-router-dom';
 import { Fab } from '@mui/material';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 type Props = {
     defaultIndex?: number;
@@ -17,9 +17,9 @@ const tabs = [
         title: 'Home',
         id: 'home',
         icon: (
-            <Fab size="medium" color="primary" sx={{ mb: 1 }}>
+            <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
                 <Link to="/">
-                    <CottageOutlinedIcon sx={{ mt: 1 }} />
+                    <CottageOutlinedIcon color="primary" sx={{ mt: 1 }} />
                 </Link>
             </Fab>
         )
@@ -28,7 +28,7 @@ const tabs = [
         title: 'About',
         id: 'about',
         icon: (
-            <Fab size="medium" color="primary" sx={{ mb: 1 }}>
+            <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
                 <Link to="/about">
                     <EmojiPeopleOutlinedIcon color="info" sx={{ mt: 1 }} />
                 </Link>
@@ -39,9 +39,9 @@ const tabs = [
         title: 'Skills',
         id: 'skills',
         icon: (
-            <Fab size="medium" color="primary" sx={{ mb: 1 }}>
+            <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
                 <Link to="/skills">
-                    <FormatListBulletedOutlinedIcon color="success" sx={{ mt: 1 }} />
+                    <FormatListBulletedOutlinedIcon color="warning" sx={{ mt: 1 }} />
                 </Link>
             </Fab>
         )
@@ -50,42 +50,32 @@ const tabs = [
         title: 'Contact',
         id: 'contact',
         icon: (
-            <Fab size="medium" color="primary" sx={{ mb: 1 }}>
+            <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
                 <Link to="/contact">
-                    <EmailOutlinedIcon sx={{ mt: 1 }} />
+                    <EmailOutlinedIcon color="secondary" sx={{ mt: 1 }} />
                 </Link>
             </Fab>
         )
     }
 ];
 
-const variants = {
-    visible: {
+const itemVariants: Variants = {
+    open: {
         opacity: 1,
-        transition: {
-          when: "beforeChildren",
-          staggerChildren: 0.3,
-        },
-      },
-      hidden: {
-        opacity: 0,
-        transition: {
-          when: "afterChildren",
-        },
-      },
-    }
+        y: 0,
+        transition: { type: 'spring', stiffness: 300, damping: 24 }
+    },
+    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+};
 
 function NavBarMobile({ defaultIndex = 0 }: Props) {
-    const [activeTab, setActiveTab] = React.useState(defaultIndex);
+    const [activeIndex, setActiveIndex] = React.useState(defaultIndex);
 
-    const onTabClick = (tab) => {
-        const tabIdClick = tabs.findIndex(
-            (tab) => `#${tab.id}` === tab.id
-        )
-        setActiveTab(tabIdClick !== -1 ? tabIdClick : defaultIndex);
-        console.log(tab.id)
+    const handleClick = (i) => {
+        setActiveIndex(i);
+        console.log(activeIndex);
     };
-    //if current index is active then set styles to button
+
     return (
         <AppBar
             color="primary"
@@ -97,15 +87,23 @@ function NavBarMobile({ defaultIndex = 0 }: Props) {
                 flexDirection: 'row',
                 justifyContent: 'space-evenly'
             }}>
-            {tabs.map((tab, index) => (
+            {tabs.map((tab, i) => (
                 <motion.div
                     key={tab.id}
+                    onClick={() => handleClick(i)}
                     whileHover={{ scale: 1.2 }}
                     onHoverStart={(e) => {}}
                     onHoverEnd={(e) => {}}
-                    variants={variants}
-                    animate={activeTab === index ? 'active' : 'inactive'}
-                    onClick={() => onTabClick(index)}>
+                    initial={{ y: 50 }}
+                    animate={{ y: 0 }}
+                    transition={{
+                        type: 'spring',
+                        duration: 2,
+                        bounce: 0.6,
+                        delayChildren: 0.3,
+                        staggerChildren: 0.05
+                    }}
+                    variants={itemVariants}>
                     {tab.icon}
                 </motion.div>
             ))}

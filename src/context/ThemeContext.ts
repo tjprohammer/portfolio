@@ -1,43 +1,37 @@
 import React from 'react';
-import {
-    createTheme,
-} from '@mui/material';
+import { createTheme } from '@mui/material';
 import { Theme } from '@emotion/react';
 
 interface ColorContextSchema {
     toggleColorMode: () => void;
 }
 
-export const ColorContext = React.createContext<ColorContextSchema>(
-    {} as ColorContextSchema
-);
+export const ColorContext = React.createContext<ColorContextSchema>({} as ColorContextSchema);
 
 export const lightTheme: Theme = createTheme({
     palette: {
         mode: 'light',
+        //Teal
         primary: {
-            main: '#577590',
-            light: '#7890a6',
-             dark: '#3c5164',
+            main: '#41B3A3 ',
             contrastText: '#ffffff'
         },
+        //light blue
         secondary: {
-            main: '#43AA8B',
-            light: '#68bba2',
-            dark: '#2e7661',
+            main: '#85DCB',
             contrastText: '#ffffff'
         },
+        //Peach
         error: {
-            main: '#F94144'
+            main: '#c38d9e'
         },
+        //Pink
         warning: {
-            main: '#F8961E'
+            main: '#e8a87c'
         },
-        success: {
-            main: '#90BE6D'
-        },
+        //Orange
         info: {
-            main: '#F9C74F'
+            main: '#e27d60'
         },
         text: {
             primary: 'rgba(0,0,0,0.87)',
@@ -49,7 +43,6 @@ export const lightTheme: Theme = createTheme({
             paper: '#ffffff'
         }
     },
-
 
     typography: {
         h1: {
@@ -91,32 +84,34 @@ export const lightTheme: Theme = createTheme({
         },
         overline: {
             fontFamily: 'Raleway'
-        },
+        }
     }
 });
 
 export const darkTheme: Theme = createTheme({
     palette: {
         mode: 'dark',
+        //Orange
         primary: {
-            main: '#577590',
+            main: '#e27d60 ',
             contrastText: '#ffffff'
         },
+        //light blue
         secondary: {
-            main: '#43AA8B',
+            main: '#85DCB',
             contrastText: '#ffffff'
         },
+        //Peach
         error: {
-            main: '#F94144'
+            main: '#e8a87c '
         },
+        //Pink
         warning: {
-            main: '#F8961E'
+            main: '#c38d9e  '
         },
-        success: {
-            main: '#90BE6D'
-        },
+        //Teal
         info: {
-            main: '#F9C74F'
+            main: '#41B3A3  '
         },
         background: {
             default: '#303030',
@@ -168,6 +163,6 @@ export const darkTheme: Theme = createTheme({
         },
         overline: {
             fontFamily: 'Raleway'
-        },
+        }
     }
 });

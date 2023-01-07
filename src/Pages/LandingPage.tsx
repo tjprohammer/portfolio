@@ -1,7 +1,18 @@
 import React from 'react';
 import logo from '../../assets/logo-svg.svg';
-import { ButtonBase, Container, Grid, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import styled from '@emotion/styled';
+
+import { motion, Variants } from 'framer-motion';
+
+const itemVariants: Variants = {
+    open: {
+        opacity: 1,
+        y: 0,
+        transition: { type: 'spring', stiffness: 300, damping: 24 }
+    },
+    closed: { opacity: 0, y: 20, transition: { duration: 0.2 } }
+};
 
 function LandingPage() {
     return (
@@ -50,50 +61,91 @@ function LandingPage() {
                                     alignItems: 'center',
                                     justifyContent: 'center'
                                 }}>
-                                <Typography
-                                    gutterBottom
-                                    variant="h3"
-                                    style={{
-                                        display: 'flex',
-                                        textAlign: 'center',
-                                        alignItems: 'center'
-                                    }}>
-                                    TJ Prohammer Portfolio
-                                </Typography>
-                                <Line />
-                                <Typography
-                                    variant="body1"
-                                    gutterBottom
-                                    style={{
-                                        display: 'flex',
-                                        textAlign: 'center',
-                                        alignItems: 'center'
-                                    }}>
-                                    A deep understanding of systems and
-                                </Typography>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 300 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        type: 'spring',
+                                        delay: 0.2,
+                                        duration: 2,
+                                        bounce: 0.6
+                                    }}
+                                    variants={itemVariants}>
+                                    <Typography
+                                        gutterBottom
+                                        variant="h3"
+                                        color="primary"
+                                        style={{
+                                            display: 'flex',
+                                            textAlign: 'center',
+                                            alignItems: 'center',
+                                            letterSpacing: '.05em'
+                                        }}>
+                                        TJ Prohammer <br /> Portfolio
+                                    </Typography>
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 300 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        type: 'spring',
+                                        delay: 0.3,
+                                        duration: 2,
+                                        bounce: 0.6
+                                    }}
+                                    variants={itemVariants}>
+                                    <Line />
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 300 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        type: 'spring',
+                                        delay: 0.5,
+                                        duration: 2,
+                                        bounce: 0.6
+                                    }}
+                                    variants={itemVariants}>
+                                    <Typography
+                                        variant="body1"
+                                        gutterBottom
+                                        sx={{
+                                            display: 'flex',
+                                            textAlign: 'center',
+                                            alignItems: 'center',
+                                            letterSpacing: '.05em',
+                                            pt: 2
+                                        }}>
+                                        Solution focused IT professional with 4+ years of
+                                        experience.
+                                    </Typography>
+                                </motion.div>
                             </Container>
                         </Grid>
                     </Grid>
                 </Grid>
                 <Grid item>
-                    <ButtonBase sx={{ width: 300, height: 300, alignItems: 'center' }}>
-                        <img
-                            alt="logo"
-                            src={logo}
-                            style={{ height: '300px', position: 'relative' }}
-                        />
-                    </ButtonBase>
+                    <motion.img
+                        alt="logo"
+                        src={logo}
+                        style={{ height: '300px', position: 'relative' }}
+                        whileHover={{ scale: 1.2 }}
+                        initial={{ opacity: 0, y: 300 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ type: 'spring', delay: 0.1, duration: 2, bounce: 0.6 }}
+                        variants={itemVariants}
+                    />
                 </Grid>
             </Grid>
         </Container>
     );
 }
 
-const Line = styled.span`
+export const Line = styled.span`
     height: 1px;
     margin-top: 12px;
     margin-bottom: 12px;
-    background-color: #43aa8b;
+    background-color: #123c69;
     width: 12em;
     display: flex;
 `;

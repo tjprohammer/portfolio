@@ -7,7 +7,7 @@ export const SwitchModeButton = () => {
     const theme = useTheme();
     const colorMode = React.useContext(ColorContext);
     return (
-        <IconButton sx={{ ml: 2, float: 'right' }} color="inherit" onClick={colorMode.toggleColorMode}>
+        <IconButton sx={{ ml: 2, float: 'right'}} color="inherit" onClick={colorMode.toggleColorMode}>
             {theme.palette.mode === 'dark' ? <LightIcon /> : <DarkIcon />}
         </IconButton>
     );
