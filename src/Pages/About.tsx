@@ -13,7 +13,9 @@ const About = (props: Props) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     display: 'flex',
-                    flexDirection: 'column'
+                    flexDirection: 'column',
+                    pt: 14,
+                    margin: 'auto',
                 }}>
                 <Typography variant="h2" color="secondary" sx={{}}>
                     About

@@ -1,14 +1,14 @@
 import { createTheme, CssBaseline, PaletteMode, ThemeProvider } from '@mui/material';
-import { Route, Routes } from 'react-router-dom';
+// import { Route, Routes } from 'react-router-dom';
 import { ColorContext, darkTheme, lightTheme } from './context/ThemeContext';
 import React from 'react';
 import { SwitchModeButton } from './components/SwitchThemeButton/SwitchModeButton';
 
 import LandingPage from './Pages/LandingPage';
-import About from './Pages/About';
-import Skills from './Pages/Skills';
-import Contact from './Pages/Contact';
-import "./app.css";
+// import About from './Pages/About';
+// import Skills from './Pages/Skills';
+// import Contact from './Pages/Contact';
+import './app.css';
 import NavBar from './components/navBar/NavBar';
 
 function App({}) {
@@ -27,16 +27,11 @@ function App({}) {
     );
     return (
         <ColorContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme} >
+            <ThemeProvider theme={theme}>
                 <CssBaseline enableColorScheme>
                     <SwitchModeButton />
                     <NavBar />
-                    <Routes>
-                        <Route path="/" element={<LandingPage />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/skills" element={<Skills />} />
-                        <Route path="/contact" element={<Contact />} />
-                    </Routes>
+                    <LandingPage />
                 </CssBaseline>
             </ThemeProvider>
         </ColorContext.Provider>
