@@ -1,30 +1,33 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 
 type Props = {};
 
 export const Contact = (props: Props) => {
     return (
-        <Box
-            sx={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '2',
-                columnGap: '3'
-            }}>
+        <Container
+        id='/contact'
+        sx={{
+            pt: 0,
+            margin: 'auto',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+            display: 'flex',
+            height: '100vh'
+        }}>
             <Typography
                 variant="h4"
                 color="primary.dark"
                 sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                Contact
+                Get In Touch
             </Typography>
             <Typography
                 variant="h4"
                 color="primary.dark"
                 sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                Contact
+                <a href="mailto:tj@tjprohammer.us">Email TJ Prohammer</a> 
             </Typography>
-        </Box>
+        </Container>
     );
 };
 

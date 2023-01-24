@@ -1,17 +1,20 @@
 import React from 'react';
-import { Container } from '@mui/material';
 import styled from '@emotion/styled';
-
+import { Element } from 'react-scroll';
 import About from './About';
 import Home from './Home';
+import Skills from './Skills';
+import Contact from './Contact';
 
 function LandingPage(props) {
     return (
         <>
-            <Home />
-            <Container sx={{}}>
+            <Element>
+                <Home />
                 <About />
-            </Container>
+                <Skills />
+                <Contact />
+            </Element>
         </>
     );
 }

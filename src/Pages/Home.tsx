@@ -2,7 +2,6 @@ import React from 'react';
 import logo from '../../assets/logo-svg.svg';
 import { Container, Grid, Typography } from '@mui/material';
 import styled from '@emotion/styled';
-
 import { motion, Variants } from 'framer-motion';
 
 const itemVariants: Variants = {
@@ -18,13 +17,14 @@ function Home(props) {
     return (
         <>
             <Container
+                id="/"
                 sx={{
-                    pt: 4,
+                    pt: 0,
                     margin: 'auto',
                     alignItems: 'center',
                     justifyContent: 'space-around',
                     display: 'flex',
-                    height: '75vh'
+                    height: '90vh'
                 }}>
                 <Grid
                     item
@@ -127,8 +127,7 @@ function Home(props) {
                                                 letterSpacing: '.05em',
                                                 pt: 2
                                             }}>
-                                            Software Developer and an IT Professional <br />{' '}
-                                            Functionality
+                                            Software Developer and an IT Professional <br />
                                         </Typography>
                                     </motion.div>
                                 </Container>
@@ -148,6 +147,28 @@ function Home(props) {
                         />
                     </Grid>
                 </Grid>
+                {/* <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    initial={{ opacity: 0, y: 300 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        type: 'spring',
+                        delay: 0.3,
+                        duration: 2,
+                        bounce: 0.6
+                    }}>
+                    <Link to="/about">
+                        <KeyboardDoubleArrowDownRoundedIcon
+                            fontSize="large"
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                cursor: 'pointer',
+                                mt: 10
+                            }}
+                        />
+                    </Link>
+                </motion.div> */}
             </Container>
         </>
     );
@@ -157,7 +178,7 @@ export const Line = styled.span`
     height: 1px;
     margin-top: 12px;
     margin-bottom: 12px;
-    background-color: #123c69;
+    background-color: #c38d9e;
     width: 12em;
     display: flex;
 `;

@@ -4,9 +4,9 @@ import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import { Link } from 'react-router-dom';
 import { Fab } from '@mui/material';
 import { motion, Variants } from 'framer-motion';
+import { Link } from 'react-scroll'
 
 type Props = {
     defaultIndex?: number;
@@ -18,7 +18,7 @@ const tabs = [
         id: 'home',
         icon: (
             <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
-                <Link to="/">
+                <Link to="/" smooth={true}>
                     <CottageOutlinedIcon color="primary" sx={{ mt: 1 }} />
                 </Link>
             </Fab>
@@ -29,7 +29,7 @@ const tabs = [
         id: 'about',
         icon: (
             <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
-                <Link to="/about">
+                <Link to="/about" smooth={true}>
                     <EmojiPeopleOutlinedIcon color="info" sx={{ mt: 1 }} />
                 </Link>
             </Fab>
@@ -40,7 +40,7 @@ const tabs = [
         id: 'skills',
         icon: (
             <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
-                <Link to="/skills">
+                <Link to="/skills" smooth={true}>
                     <FormatListBulletedOutlinedIcon color="warning" sx={{ mt: 1 }} />
                 </Link>
             </Fab>
@@ -51,7 +51,7 @@ const tabs = [
         id: 'contact',
         icon: (
             <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
-                <Link to="/contact">
+                <Link to="/contact" smooth={true}>
                     <EmailOutlinedIcon color="secondary" sx={{ mt: 1 }} />
                 </Link>
             </Fab>
