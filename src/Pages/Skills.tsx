@@ -1,22 +1,24 @@
 import React from 'react';
 import { Card, CardContent, Container, Grid, Typography } from '@mui/material';
 import { Line } from './Home';
+import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 
 type Props = {};
 const Skills = (props: Props) => {
+    const ref = useFadeInOnScroll();
     return (
-        <>
+        <Container ref={ref}
+        style={{ opacity: 0 }}>
             <Container
-                id="/skills"
                 sx={{
                     alignItems: 'center',
                     justifyContent: 'center',
                     display: 'flex',
                     flexDirection: 'column',
-                    pt: 14,
+                    pt: 20,
                     margin: 'auto'
                 }}>
-                <Typography variant="h2" color="secondary" sx={{}}>
+                <Typography id="/skills" variant="h2" color="secondary" sx={{}}>
                     Skills
                 </Typography>
                 <Line />
@@ -25,8 +27,16 @@ const Skills = (props: Props) => {
                     mastering.
                 </Typography>
             </Container>
-            <Container sx={{ maxWidth: ' 400px' }}>
-                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Container
+                
+                sx={{
+                    maxWidth: ' 400px',
+                    width: '400px',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    alignSelf: 'center'
+                }}>
+                <Grid container rowSpacing={2} columnSpacing={{ xs: 3, sm: 2, md: 3 }} >
                     <Grid item xs={6}>
                         <Card sx={{ justifyContent: 'center', display: 'flex' }}>
                             <CardContent
@@ -184,7 +194,7 @@ const Skills = (props: Props) => {
                         </Card>
                     </Grid>
                     <Grid item xs={6}>
-                        <Card sx={{ justifyContent: 'center', display: 'flex', color: 'primary' }}>
+                        <Card sx={{ justifyContent: 'center', display: 'flex' }}>
                             <CardContent
                                 sx={{
                                     alignItems: 'center',
@@ -231,7 +241,7 @@ const Skills = (props: Props) => {
                         </Card>
                     </Grid>
                     <Grid item xs={6}>
-                        <Card sx={{ justifyContent: 'center', display: 'flex' }}>
+                        <Card sx={{ justifyContent: 'center', display: 'flex', maxWidth: '12em' }}>
                             <CardContent
                                 sx={{
                                     alignItems: 'center',
@@ -258,7 +268,7 @@ const Skills = (props: Props) => {
                         </Card>
                     </Grid>
                     <Grid item xs={6}>
-                        <Card sx={{ justifyContent: 'center', display: 'flex' }}>
+                        <Card sx={{ justifyContent: 'center', display: 'flex', maxWidth: '12em' }}>
                             <CardContent
                                 sx={{
                                     alignItems: 'center',
@@ -303,7 +313,7 @@ const Skills = (props: Props) => {
                     </Grid>
                 </Grid>
             </Container>
-        </>
+        </Container>
     );
 };
 

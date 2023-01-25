@@ -85,7 +85,7 @@ function Home(props) {
                                                 display: 'flex',
                                                 textAlign: 'center',
                                                 alignItems: 'center',
-                                                letterSpacing: '.05em'
+                                                letterSpacing: '.08em'
                                             }}>
                                             TJ Prohammer <br /> Portfolio
                                         </Typography>
@@ -124,7 +124,7 @@ function Home(props) {
                                                 display: 'flex',
                                                 textAlign: 'center',
                                                 alignItems: 'center',
-                                                letterSpacing: '.05em',
+                                                letterSpacing: '.08em',
                                                 pt: 2
                                             }}>
                                             Software Developer and an IT Professional <br />
