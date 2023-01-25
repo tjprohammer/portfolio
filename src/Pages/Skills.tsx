@@ -15,7 +15,6 @@ const Skills = (props: Props) => {
                     justifyContent: 'center',
                     display: 'flex',
                     flexDirection: 'column',
-                    pt: 20,
                     margin: 'auto'
                 }}>
                 <Typography id="/skills" variant="h2" color="secondary" sx={{}}>
