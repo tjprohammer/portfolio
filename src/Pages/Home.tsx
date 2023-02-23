@@ -81,11 +81,12 @@ function Home(props) {
                                             gutterBottom
                                             variant="h3"
                                             color="primary"
-                                            style={{
+                                            sx={{
                                                 display: 'flex',
                                                 textAlign: 'center',
                                                 alignItems: 'center',
-                                                letterSpacing: '.08em'
+                                                letterSpacing: '.08em',
+                                                pt: 0
                                             }}>
                                             TJ Prohammer <br /> Portfolio
                                         </Typography>
