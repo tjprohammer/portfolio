@@ -1,0 +1,116 @@
+import React from 'react';
+import { Card, CardContent, Container, Grid, Typography } from '@mui/material';
+import tjprohammerweb from '../../assets/tjprohammerweb.png'
+import thealpinestudioweb from '../../assets/thealpinestudioweb.png'
+interface Project {
+    title: string;
+    image: string;
+  }
+  
+  const projects: Project[] = [
+    {
+      title: "tjprohammer.us",
+      image: tjprohammerweb,
+    },
+    {
+      title: "thealpinestudio.com",
+      image: thealpinestudioweb,
+    },
+    {
+      title: "Node JS",
+      image: thealpinestudioweb,
+    },
+    {
+      title: "MongoDB",
+      image: tjprohammerweb,
+    },
+    {
+      title: "AWS",
+      image: thealpinestudioweb,
+    },
+    {
+      title: "Redux",
+      image: tjprohammerweb,
+    },
+  ];
+const Projects = () => {
+    const ref = React.useRef<HTMLDivElement>(null);
+    const [isMobile, setIsMobile] = React.useState(false);
+  
+    React.useEffect(() => {
+      const handleResize = () => setIsMobile(window.innerWidth <= 700);
+      window.addEventListener("resize", handleResize);
+      handleResize();
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+  
+    return (
+      <Container ref={ref} style={{ opacity: 1 }}>
+        <Container
+          sx={{
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+            flexDirection: "column",
+            pt: 20,
+            margin: "auto",
+          }}
+        >
+          <Typography id="/projects" variant="h2" color="secondary">
+            Projects
+          </Typography>
+          <hr />
+          <Typography variant="body1" sx={{ pb: 6, textAlign: "center" }}>
+            Fully build projects I have built
+          </Typography>
+        </Container>
+        <Container
+          sx={{
+            maxWidth: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            alignSelf: "center",
+          }}
+        >
+          <Grid
+            container
+            rowSpacing={2}
+            columnSpacing={{ xs: 3, sm: 2, md: 3 }}
+            sx={{
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: isMobile ? "center" : 'center',
+              justifyContent: isMobile ? "center" : "center",
+            }}
+          >
+            {projects.map((project, index) => (
+              <Grid item xs={6} key={index}>
+                <Card sx={{ justifyContent: "center", display: "flex" }}>
+                  <CardContent
+                    sx={{
+                      alignItems: "center",
+                      display: "flex",
+                      justifyContent: "center",
+                      flexDirection: "column",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <img
+                
+                      height="auto"
+                      width="100%"
+                      style={{ objectFit: "contain", padding: 3 }}
+                      src={project.image}
+                      alt={project.title}
+                    />
+                    <Typography variant="h6">{project.title}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Container>
+    );
+  };
+  export default Projects
