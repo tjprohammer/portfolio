@@ -25,12 +25,12 @@ function Home(props) {
             <Container
                 id="/"
                 sx={{
-                    pt: 0,
-                    margin: 'auto',
+                    pb: 10,
                     alignItems: 'center',
                     justifyContent: 'center',
                     display: 'flex',
-                    height: '90vh'
+                    height: '100%',
+                    width: '100%'
                 }}>
                 <Grid
                     item
