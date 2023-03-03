@@ -11,6 +11,7 @@ const Skills = (props: Props) => {
         <Container ref={ref} style={{ opacity: 0 }}>
             <Container
                 sx={{
+                    pt: 24,
                     alignItems: 'center',
                     justifyContent: 'center',
                     display: 'flex',

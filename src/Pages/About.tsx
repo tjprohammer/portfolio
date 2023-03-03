@@ -17,7 +17,7 @@ const About = (props: Props) => {
             ref={ref}
             style={{opacity: 0}}
                 sx={{
-                    pt: 24,
+                    pt: 18,
                     margin: 'auto',
                     alignItems: 'center',
                     justifyContent: 'space-around',

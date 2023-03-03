@@ -11,8 +11,9 @@ export const Contact = (props: Props) => {
             pt: 0,
             margin: 'auto',
             alignItems: 'center',
-            justifyContent: 'space-around',
+            justifyContent: 'center',
             display: 'flex',
+            flexDirection: 'column',
             height: '100vh'
         }}>
             <Typography
@@ -24,7 +25,7 @@ export const Contact = (props: Props) => {
             <Typography
                 variant="h4"
                 color="primary.dark"
-                sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                sx={{pt: 6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <a href="mailto:tj@tjprohammer.us">Email TJ Prohammer</a> 
             </Typography>
         </Container>

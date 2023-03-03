@@ -53,6 +53,7 @@ const MenuItems = (props: MenuItemsProps) => {
                                     </TypoText>
                                 </NavLinkTo>
                             </FontWrap>
+                            
                             <FontWrap>
                                 <EmailOutlinedIcon sx={{ color: '#3c5164', marginRight: '.3em' }} />
                                 <NavLinkTo to="/contact">
