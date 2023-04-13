@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../assets/logo-svg.svg';
-import { Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import styled from '@emotion/styled';
 import { motion, Variants } from 'framer-motion';
 
@@ -15,16 +15,22 @@ const itemVariants: Variants = {
 
 function Home(props) {
     return (
-        <>
+        <Box sx={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            display: 'flex',
+            height: '95vh',
+            width: '100%'
+        }}>
             <Container
                 id="/"
                 sx={{
-                    pt: 0,
-                    margin: 'auto',
+                    pb: 10,
                     alignItems: 'center',
-                    justifyContent: 'space-around',
+                    justifyContent: 'center',
                     display: 'flex',
-                    height: '90vh'
+                    height: '100%',
+                    width: '100%'
                 }}>
                 <Grid
                     item
@@ -35,6 +41,8 @@ function Home(props) {
                     md={7}
                     lg={7}
                     sx={{
+                        p: 0,
+                        
                         marginLeft: 0,
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -46,9 +54,10 @@ function Home(props) {
                             lg: 'row'
                         }
                     }}>
-                    <Grid item md>
+                    <Grid item md >
                         <Grid
                             sx={{
+                                
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center'
@@ -60,7 +69,8 @@ function Home(props) {
                                         flexDirection: 'column',
                                         display: 'flex',
                                         alignItems: 'center',
-                                        justifyContent: 'center'
+                                        justifyContent: 'center',
+                                        pt: 0
                                     }}>
                                     <motion.div
                                         initial={{ opacity: 0, scale: 0.5 }}
@@ -81,11 +91,12 @@ function Home(props) {
                                             gutterBottom
                                             variant="h3"
                                             color="primary"
-                                            style={{
+                                            sx={{
                                                 display: 'flex',
                                                 textAlign: 'center',
                                                 alignItems: 'center',
-                                                letterSpacing: '.08em'
+                                                letterSpacing: '.08em',
+                                                p: 0
                                             }}>
                                             TJ Prohammer <br /> Portfolio
                                         </Typography>
@@ -147,30 +158,10 @@ function Home(props) {
                         />
                     </Grid>
                 </Grid>
-                {/* <motion.div
-                    whileHover={{ scale: 1.2 }}
-                    initial={{ opacity: 0, y: 300 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        type: 'spring',
-                        delay: 0.3,
-                        duration: 2,
-                        bounce: 0.6
-                    }}>
-                    <Link to="/about">
-                        <KeyboardDoubleArrowDownRoundedIcon
-                            fontSize="large"
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                cursor: 'pointer',
-                                mt: 10
-                            }}
-                        />
-                    </Link>
-                </motion.div> */}
+
             </Container>
-        </>
+        </Box>
+        
     );
 }
 

@@ -5,6 +5,7 @@ import About from './About';
 import Home from './Home';
 import Skills from './Skills';
 import Contact from './Contact';
+import Projects from './Projects';
 
 function LandingPage(props) {
     return (
@@ -13,6 +14,7 @@ function LandingPage(props) {
                 <Home />
                 <About />
                 <Skills />
+                <Projects />
                 <Contact />
             </Element>
         </>

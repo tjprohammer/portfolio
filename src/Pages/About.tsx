@@ -13,17 +13,20 @@ const About = (props: Props) => {
     return (
         <>
             <Container
+            
             ref={ref}
             style={{opacity: 0}}
                 sx={{
-                    pt: 14,
+                    pt: 18,
                     margin: 'auto',
                     alignItems: 'center',
                     justifyContent: 'space-around',
                     display: 'flex',
-                    height: '90vh'
+                    height: '100%',
+                    width: '100%'
                 }}>
                 <Grid
+                id="/about"
                     item
                     container
                     spacing={2}
@@ -32,7 +35,6 @@ const About = (props: Props) => {
                     md={7}
                     lg={7}
                     sx={{
-                        marginLeft: 0,
                         alignItems: 'center',
                         justifyContent: 'center',
                         display: 'flex',
@@ -48,18 +50,18 @@ const About = (props: Props) => {
                             sx={{
                                 display: 'flex',
                                 alignItems: 'center',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
                             }}>
                             {/** TEXT */}
                             <Grid item>
                                 <Container
-                                    id="/about"
+                                    
                                     sx={{
                                         flexDirection: 'column',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        pt: 10
+
                                     }}>
                                     <motion.div
                                         initial={{ opacity: 0, scale: 0.5 }}
@@ -80,7 +82,8 @@ const About = (props: Props) => {
                                                 gutterBottom
                                                 variant="h3"
                                                 color="secondary"
-                                                style={{
+                                                sx={{
+                                                    
                                                     display: 'flex',
                                                     textAlign: 'center',
                                                     alignItems: 'center',
@@ -126,7 +129,7 @@ const About = (props: Props) => {
                             alt="portrait"
                             height="350px"
                             src={portrait}
-                            style={{ position: 'relative' }}
+                            style={{ position: 'relative', paddingRight: 16, alignItems: 'center', borderRadius: '50%' }}
                             whileHover={{ scale: 1.2 }}
                             initial={{ opacity: 0, y: 300 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -134,28 +137,6 @@ const About = (props: Props) => {
                         />
                     </Grid>
                 </Grid>
-                {/* <motion.div
-                    whileHover={{ scale: 1.2 }}
-                    initial={{ opacity: 0, y: 300 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        type: 'spring',
-                        delay: 0.3,
-                        duration: 2,
-                        bounce: 0.6
-                    }}>
-                    <Link to="/about">
-                        <KeyboardDoubleArrowDownRoundedIcon
-                            fontSize="large"
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                cursor: 'pointer',
-                                mt: 10
-                            }}
-                        />
-                    </Link>
-                </motion.div> */}
             </Container>
         </>
     );

@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
 import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
+import ContentPasteSearchOutlinedIcon from '@mui/icons-material/ContentPasteSearchOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { Fab } from '@mui/material';
 import { motion, Variants } from 'framer-motion';
@@ -47,12 +48,23 @@ const tabs = [
         )
     },
     {
+        title: 'Projects',
+        id: 'projects',
+        icon: (
+            <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
+                <Link to="/projects" smooth={true}>
+                    <ContentPasteSearchOutlinedIcon color="primary" sx={{ mt: 1 }} />
+                </Link>
+            </Fab>
+        )
+    },
+    {
         title: 'Contact',
         id: 'contact',
         icon: (
             <Fab size="medium" color="secondary" sx={{ mb: 1 }}>
                 <Link to="/contact" smooth={true}>
-                    <EmailOutlinedIcon color="secondary" sx={{ mt: 1 }} />
+                    <EmailOutlinedIcon color="info" sx={{ mt: 1 }} />
                 </Link>
             </Fab>
         )
