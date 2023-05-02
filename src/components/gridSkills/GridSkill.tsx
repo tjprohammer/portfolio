@@ -3,7 +3,6 @@ import { Card, CardContent, Container, Grid, Typography } from '@mui/material';
 
 type Props = {};
 
-
 const GridSkills = (props: Props) => {
     return (
         <Container
@@ -16,14 +15,19 @@ const GridSkills = (props: Props) => {
             }}>
             <Grid container rowSpacing={2} columnSpacing={{ xs: 3, sm: 2, md: 3 }}>
                 <Grid item xs={6}>
-                    <Card sx={{ justifyContent: 'center', display: 'flex', boxShadow: "0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)" }}>
+                    <Card
+                        sx={{
+                            justifyContent: 'center',
+                            display: 'flex',
+                            boxShadow:
+                                '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
+                        }}>
                         <CardContent
                             sx={{
                                 alignItems: 'center',
                                 display: 'flex',
                                 justifyContent: 'center',
-                                flexDirection: 'column',
-                                
+                                flexDirection: 'column'
                             }}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +74,13 @@ const GridSkills = (props: Props) => {
                     </Card>
                 </Grid>
                 <Grid item xs={6}>
-                    <Card sx={{ justifyContent: 'center', display: 'flex', boxShadow: "0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)" }}>
+                    <Card
+                        sx={{
+                            justifyContent: 'center',
+                            display: 'flex',
+                            boxShadow:
+                                '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
+                        }}>
                         <CardContent
                             sx={{
                                 alignItems: 'center',
@@ -98,7 +108,13 @@ const GridSkills = (props: Props) => {
                     </Card>
                 </Grid>
                 <Grid item xs={6}>
-                    <Card sx={{ justifyContent: 'center', display: 'flex', boxShadow: "0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)" }}>
+                    <Card
+                        sx={{
+                            justifyContent: 'center',
+                            display: 'flex',
+                            boxShadow:
+                                '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
+                        }}>
                         <CardContent
                             sx={{
                                 alignItems: 'center',
@@ -137,7 +153,13 @@ const GridSkills = (props: Props) => {
                     </Card>
                 </Grid>
                 <Grid item xs={6}>
-                    <Card sx={{ justifyContent: 'center', display: 'flex', boxShadow: "0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)" }}>
+                    <Card
+                        sx={{
+                            justifyContent: 'center',
+                            display: 'flex',
+                            boxShadow:
+                                '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
+                        }}>
                         <CardContent
                             sx={{
                                 alignItems: 'center',
@@ -173,7 +195,13 @@ const GridSkills = (props: Props) => {
                     </Card>
                 </Grid>
                 <Grid item xs={6}>
-                    <Card sx={{ justifyContent: 'center', display: 'flex',boxShadow: "0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)" }}>
+                    <Card
+                        sx={{
+                            justifyContent: 'center',
+                            display: 'flex',
+                            boxShadow:
+                                '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
+                        }}>
                         <CardContent
                             sx={{
                                 alignItems: 'center',
@@ -200,7 +228,13 @@ const GridSkills = (props: Props) => {
                     </Card>
                 </Grid>
                 <Grid item xs={6}>
-                    <Card sx={{ justifyContent: 'center', display: 'flex', boxShadow: "0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)" }}>
+                    <Card
+                        sx={{
+                            justifyContent: 'center',
+                            display: 'flex',
+                            boxShadow:
+                                '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
+                        }}>
                         <CardContent
                             sx={{
                                 alignItems: 'center',
@@ -220,7 +254,14 @@ const GridSkills = (props: Props) => {
                     </Card>
                 </Grid>
                 <Grid item xs={6}>
-                    <Card sx={{ justifyContent: 'center', display: 'flex', maxWidth: '12em', boxShadow: "0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)" }}>
+                    <Card
+                        sx={{
+                            justifyContent: 'center',
+                            display: 'flex',
+                            maxWidth: '12em',
+                            boxShadow:
+                                '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
+                        }}>
                         <CardContent
                             sx={{
                                 alignItems: 'center',
@@ -247,7 +288,14 @@ const GridSkills = (props: Props) => {
                     </Card>
                 </Grid>
                 <Grid item xs={6}>
-                    <Card sx={{ justifyContent: 'center', display: 'flex', maxWidth: '12em',boxShadow: "0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)" }}>
+                    <Card
+                        sx={{
+                            justifyContent: 'center',
+                            display: 'flex',
+                            maxWidth: '12em',
+                            boxShadow:
+                                '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
+                        }}>
                         <CardContent
                             sx={{
                                 alignItems: 'center',
@@ -287,6 +335,46 @@ const GridSkills = (props: Props) => {
                                 />
                             </svg>
                             <Typography variant="h6">Docker</Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
+                <Grid item xs={6}>
+                    <Card
+                        sx={{
+                            justifyContent: 'center',
+                            display: 'flex',
+                            maxWidth: '12em',
+                            boxShadow:
+                                '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
+                        }}>
+                        <CardContent
+                            sx={{
+                                alignItems: 'center',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                flexDirection: 'column'
+                            }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="6em" height="6em">
+                                <style></style>
+                                <g
+                                    transform="matrix(.826767 0 0 .826767 8.416322 51.138164)"
+                                    className="C">
+                                    <path
+                                        d="M39.1 15.557v-24.43l-21.16-12.22v24.43zm0-27.1l-21.16-12.22v-24.44l21.16 12.22z"
+                                        fill="#5c4ee5"
+                                    />
+                                    <path
+                                        d="M62.6-23.773v-24.44l-21.17 12.22v24.44z"
+                                        fill="#4040b2"
+                                    />
+                                    <g fill="#5c4ee5">
+                                        <path d="M15.62-25.193v-24.44l-21.16-12.22v24.44z" />
+                                        <path d="M53.64-.483" />
+                                        <path d="M17.94-21.093" />
+                                    </g>
+                                </g>
+                            </svg>
+                            <Typography variant="h6">Terraform</Typography>
                         </CardContent>
                     </Card>
                 </Grid>

@@ -20,15 +20,10 @@ const projects: Project[] = [
         url: 'https://www.thealpinestudio.com'
     },
     {
-        title: 'Node JS',
+        title: 'File Upload to S3',
         image: thealpinestudioweb,
-        url: 'https://www.tjprohammer.us'
+        url: 'https://upload.tjprohammer.us'
     },
-    {
-        title: 'MongoDB',
-        image: tjprohammerweb,
-        url: 'https://www.tjprohammer.us'
-    }
 ];
 const Projects = () => {
     const ref = React.useRef<HTMLDivElement>(null);

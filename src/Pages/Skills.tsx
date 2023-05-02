@@ -23,8 +23,7 @@ const Skills = (props: Props) => {
                 </Typography>
                 <Line />
                 <Typography variant="body1" sx={{ pb: 6, textAlign: 'center' }}>
-                    These are some of my favorite languages and services that I spend the most time
-                    mastering.
+                    These are some of my favorite languages and tools I spend most of my time mastering.
                 </Typography>
             </Container>
             <GridSkills />
