@@ -5,6 +5,7 @@ import portrait from '../../assets/portrait.jpg';
 import { Variants, motion } from 'framer-motion';
 import { useFadeInOnScroll } from '../hooks/useFadeInOnScroll';
 import { Line } from './Home';
+import ResumeLinks from '../components/resumeLinks/ResumeLinks';
 
 type Props = {};
 
@@ -131,9 +132,10 @@ const About = (props: Props) => {
                                         <Typography
                                             variant="body1"
                                             sx={{ pt: 2, pb: 6, letterSpacing: '.08em' }}>
-                                           Hello, I am TJ Prohammer. I possess a diverse set of skills and successfully crafted some innovative software solutions. I specialize in building intuitive and responsive frontend and backend applications. Moreover, I practice in arctitecting scalable, reliable and cost-effective infrastructure solutions tailored to meet the business needs. 
+                                           I am a dedicated software engineer and IT expert with a zeal for developing cutting-edge software solutions that address intricate business problems. I possess hands-on experience in crafting practical applications using React, NodeJS, AWS and Terraform, while harboring a strong fascination for solution architecture. My forte lies in clear and efficient communication, which enables me to deliver favorable results for my clients and team members. As I transition towards a solutions architect position, I am eager to utilize my expertise in designing and enhancing operational systems to surpass business objectives. 
                                         </Typography>
                                     </motion.div>
+                                    <ResumeLinks resumeUrl='https://docs.google.com/document/d/1ob4ychxajp6YrwU8TIwWSYHePDp4Wpij/edit?usp=sharing&ouid=108253229835955685676&rtpof=true&sd=true' />
                                 </Container>
                             </Grid>
                         </Grid>
@@ -168,7 +170,7 @@ const About = (props: Props) => {
                                         <Typography
                                             variant="body1"
                                             sx={{ pt: 6, letterSpacing: '.08em' }}>
-                                           <strong>Hobbies: </strong> <em> Photography, Backpacking, Fishing</em>
+                                           <strong>Hobbies: </strong> <em> Nature Photography, Backpacking, Fly Fishing</em>
                                         </Typography>
                                     </motion.div>
                 </Grid>
