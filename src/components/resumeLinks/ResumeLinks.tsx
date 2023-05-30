@@ -7,7 +7,7 @@ interface ResumeLinkProps {
 
 const ResumeLinks: React.FC<ResumeLinkProps> = ({ resumeUrl }) => {
     return (
-        <div>
+        <div style={{justifyContent: 'center', alignItems: 'center', width: '100%', display: 'flex', paddingTop: '8px'}}>
             <a href={resumeUrl} target="_blank" rel="noopener noreferrer" download>Download Resume</a>
         </div>
     )

@@ -23,18 +23,17 @@ const About = (props: Props) => {
 
     return (
         <>
-            <Container
-            
+            <div
             ref={ref}
-            style={{opacity: 0}}
-                sx={{
-                    pt: 18,
+                style={{
+                    paddingTop: 18,
                     margin: 'auto',
                     alignItems: 'center',
                     justifyContent: 'space-around',
                     display: 'flex',
                     height: '100%',
-                    width: '100%'
+                    maxWidth: "1600px"
+                    
                 }}>
                 <Grid
                 id="/about"
@@ -42,13 +41,14 @@ const About = (props: Props) => {
                     container
                     spacing={2}
                     xs={12}
-                    sm={12}
+                    sm={7}
                     md={7}
                     lg={7}
                     sx={{
                         alignItems: 'center',
                         justifyContent: 'center',
                         display: 'flex',
+                        maxWidth: '1600px',
                         flexDirection: {
                             xs: 'column',
                             sm: 'column',
@@ -135,7 +135,7 @@ const About = (props: Props) => {
                                            I am a dedicated software engineer and IT expert with a zeal for developing cutting-edge software solutions that address intricate business problems. I possess hands-on experience in crafting practical applications using React, NodeJS, AWS and Terraform, while harboring a strong fascination for solution architecture. My forte lies in clear and efficient communication, which enables me to deliver favorable results for my clients and team members. As I transition towards a solutions architect position, I am eager to utilize my expertise in designing and enhancing operational systems to surpass business objectives. 
                                         </Typography>
                                     </motion.div>
-                                    <ResumeLinks resumeUrl='https://docs.google.com/document/d/1ob4ychxajp6YrwU8TIwWSYHePDp4Wpij/edit?usp=sharing&ouid=108253229835955685676&rtpof=true&sd=true' />
+                                    
                                 </Container>
                             </Grid>
                         </Grid>
@@ -151,6 +151,7 @@ const About = (props: Props) => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ type: 'spring', delay: 0.1, duration: 2, bounce: 0.6 }}
                         />
+                        
                     </Grid>
                     <motion.div
                                         initial={{ opacity: 0, scale: 0.5 }}
@@ -167,14 +168,16 @@ const About = (props: Props) => {
                                                 restDelta: 0.001
                                             }
                                         }}>
+                                            
                                         <Typography
                                             variant="body1"
                                             sx={{ pt: 6, letterSpacing: '.08em' }}>
                                            <strong>Hobbies: </strong> <em> Nature Photography, Backpacking, Fly Fishing</em>
+                                           <ResumeLinks resumeUrl='https://docs.google.com/document/d/1ob4ychxajp6YrwU8TIwWSYHePDp4Wpij/edit?usp=sharing&ouid=108253229835955685676&rtpof=true&sd=true' />
                                         </Typography>
                                     </motion.div>
                 </Grid>
-            </Container>
+            </div>
         </>
     );
 };

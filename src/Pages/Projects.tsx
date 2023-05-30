@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent, Container, Grid, Typography } from '@mui/material';
 import tjprohammerweb from '../../assets/tjprohammerweb.png';
 import thealpinestudioweb from '../../assets/thealpinestudioweb.png';
+import fileupload from '../../assets/file-upload.png';
 interface Project {
     title: string;
     image: string;
@@ -21,7 +22,7 @@ const projects: Project[] = [
     },
     {
         title: 'File Upload to S3',
-        image: thealpinestudioweb,
+        image: fileupload,
         url: 'https://upload.tjprohammer.us'
     },
 ];
