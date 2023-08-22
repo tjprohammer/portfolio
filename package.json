@@ -5,7 +5,7 @@
   "main": "index.tsx",
   "scripts": {
     "start": "webpack-dev-server ./src/",
-    "build": "webpack ."
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",

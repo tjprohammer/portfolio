@@ -18,7 +18,7 @@ const projects: Project[] = [
     {
         title: 'thealpinestudio.com',
         image: thealpinestudioweb,
-        url: 'https://www.thealpinestudio.com'
+        url: 'https://thealpinestudio.com'
     },
     {
         title: 'File Upload to S3',
