@@ -1,16 +1,17 @@
 import React from 'react';
-import { Card, CardContent, Grid, Typography } from '@mui/material';
+import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
 
 type Props = {};
 
 const GridSkills = (props: Props) => {
     return (
-        <div
-            style={{
+        <Box
+            sx={{
                 maxWidth: ' 400px',
+                display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                alignSelf: 'center'
+                margin: '0 auto',
             }}>
             <Grid container rowSpacing={2} columnSpacing={{ xs: 3, sm: 2, md: 3 }}>
                 <Grid item xs={6}>
@@ -18,6 +19,7 @@ const GridSkills = (props: Props) => {
                         sx={{
                             justifyContent: 'center',
                             display: 'flex',
+                            alignItems: 'center',
                             boxShadow:
                                 '0px 2px 1px 2px rgb(0 0 0 / 40%), 0px 4px 2px 0px rgb(0 0 0 / 14%), 0px 1px 4px 0px rgb(0 0 0 / 12%)'
                         }}>
@@ -418,7 +420,7 @@ const GridSkills = (props: Props) => {
                     </Card>
                 </Grid>
             </Grid>
-        </div>
+        </Box>
     );
 };
 
