@@ -18,11 +18,11 @@ const Skills = (props: Props) => {
                     flexDirection: 'column',
                     margin: 'auto'
                 }}>
-                <Typography id="/skills" variant="h2" color="secondary" sx={{}}>
+                <Typography id="/skills" variant="h2" color="secondary" sx={{letterSpacing: '.08em'}}>
                     Skills
                 </Typography>
                 <Line />
-                <Typography variant="body1" sx={{ pb: 6, textAlign: 'center' }}>
+                <Typography variant="body1" sx={{ pb: 6, textAlign: 'center', letterSpacing: '.08em' }}>
                     These are some of my favorite languages and tools I spend most of my time mastering.
                 </Typography>
             </Container>

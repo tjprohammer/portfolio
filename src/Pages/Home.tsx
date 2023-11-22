@@ -138,7 +138,7 @@ function Home(props) {
                                                 letterSpacing: '.08em',
                                                 pt: 2
                                             }}>
-                                            Software Developer and an IT Professional <br />
+                                            Full Stack Software Engineer | Cloud Architecture Engineer <br />
                                         </Typography>
                                     </motion.div>
                                 </Container>
