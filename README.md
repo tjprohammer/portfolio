@@ -19,6 +19,4 @@ Webpack
 Material UI
 
 
-aws s3 cp ../build/ s3://$(terraform output -raw bucket_name)/ --recursive  
- 
- aws s3 cp ./build/ s3://portfolio.tjprohammer.us/ --recursive
+
