@@ -184,7 +184,7 @@ const About = (props: Props) => {
                                 Hobbies: <br />{' '}
                             </strong>{' '}
                             <em> Nature Photography, Backpacking, Fly Fishing</em>
-                            <ResumeLinks resumeUrl="https://resume-tjprohammer.s3.amazonaws.com/TJ+Prohammer_Resume.pdf" />
+                            <ResumeLinks resumeUrl="https://resume-tjprohammer.s3.amazonaws.com/TJ+Prohammer_Resumee.pdf" />
                         </Typography>
                     </motion.div>
                 </Grid>

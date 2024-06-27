@@ -1,3 +1,4 @@
 node_modules
 build
-public/TJProhammerResume.pdf
+/terraform/terraform.tfvars
+/terraform/.terraform

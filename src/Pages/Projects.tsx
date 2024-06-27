@@ -102,12 +102,12 @@ const Projects = () => {
                                 }}>
                                 <a href={project.url} target="_blank" rel="noopener noreferrer">
                                     <img
-                                       style={{
-                                        width: '100%', // Full width of the card
-                                        height: '100%', // Fixed height for consistency
-                                        objectFit: 'cover', // Cover the fixed height area
-                                        objectPosition: 'center' // Center the image
-                                    }}
+                                        style={{
+                                            width: '100%', // Full width of the card
+                                            height: '100%', // Fixed height for consistency
+                                            objectFit: 'cover', // Cover the fixed height area
+                                            objectPosition: 'center' // Center the image
+                                        }}
                                         src={project.image}
                                         alt={project.title}
                                     />
@@ -148,7 +148,9 @@ const Projects = () => {
                                 </CardContent>
                                 <CardActions>
                                     {/* Placeholder for action buttons */}
-                                    <Button size="small">Learn More</Button>
+                                    <a href={project.url} target="_blank" rel="noopener noreferrer">
+                                        <Button size="small">Learn More</Button>
+                                    </a>
                                 </CardActions>
                             </Card>
                         </Grid>
