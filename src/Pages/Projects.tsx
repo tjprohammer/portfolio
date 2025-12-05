@@ -15,10 +15,10 @@ const projects: Project[] = [
     {
         title: 'tjprohammer.us',
         image: tjprohammerweb,
-        url: 'https://www.tjprohammer.us',
+        url: 'https://photo.tjprohammer.us',
         title_description: 'TJ Prohammer Nature Photography',
         description:
-            'Crafted a responsive website, optimized for performance and user experience. Implemented the MERN stack, with MongoDB Atlas, Express.js, React, and Node.js, and integrated Stripe for secure payment processing. Engineered a scalable architecture to handle high traffic and data volumes. Utilized Docker for consistent development environments and seamless deployment. Established a CI/CD pipeline using Jenkins, enhancing development efficiency, minimizing deployment errors, and enabling quicker releases. Hosted the site on AWS EC2, leveraging Linux AMI and NGINX for superior security and performance.'
+            'Built a map-based photography journal where I can upload and create new pins for every location shot across the US. Each pin captures the story behind the photo, the gear used, and planning notes for future visits, helping me curate and share my favorite landscapes in a single, immersive experience.'
     },
     {
         title: 'thealpinestudio.com',
@@ -87,16 +87,17 @@ const Projects = () => {
                     columnSpacing={{ xs: 3, sm: 2, md: 3 }}
                     sx={{
                         flexDirection: isMobile ? 'column' : 'row',
-                        alignItems: isMobile ? 'center' : 'center',
+                        alignItems: isMobile ? 'center' : 'stretch',
                         justifyContent: isMobile ? 'center' : 'center'
                     }}>
                     {projects.map((project, index) => (
-                        <Grid item xs={10} sm={6} key={index}>
+                        <Grid item xs={10} sm={6} key={index} sx={{ display: 'flex' }}>
                             <Card
                                 sx={{
                                     display: 'flex',
                                     flexDirection: 'column',
                                     justifyContent: 'center',
+                                    height: '100%',
                                     boxShadow:
                                         '0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)'
                                 }}>
