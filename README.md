@@ -22,26 +22,25 @@ Pushes to `main` deploy automatically via GitHub Actions
 (`.github/workflows/deploy.yml`) — same AWS key pattern as the
 `tjprohammer-us` photo site workflow.
 
-### One-time setup: copy secrets from the photo repo
+### One-time setup: GitHub Environment secrets
 
-You already have deploy credentials on `tjprohammer-us`. Copy them onto
-`portfolio`:
+Deploy uses the GitHub Environment named `AWS_ACCESS_KEY_ID`
+(Settings → Environments). That name is only the environment label —
+the **secret names inside it** must be:
 
-1. Open  
-   `https://github.com/tjprohammer/tjprohammer-us/settings/secrets/actions`
-2. Note that `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` exist  
-   (GitHub won’t show the values — you’ll need the original keys from
-   wherever you stored them, or create a new IAM access key)
-3. Open  
-   `https://github.com/tjprohammer/portfolio/settings/secrets/actions`
-4. Click **New repository secret** and add:
-   - `AWS_ACCESS_KEY_ID` — same value as the photo repo
-   - `AWS_SECRET_ACCESS_KEY` — same value as the photo repo
-5. (Optional) `AWS_CLOUDFRONT_DISTRIBUTION_ID` — portfolio’s CloudFront ID  
-   If omitted, the workflow looks it up by alias `portfolio.tjprohammer.us`  
-   (do **not** reuse the photo site ID `E31AR5COOJWOTE`)
+| Secret name | Value |
+| --- | --- |
+| `AWS_ACCESS_KEY_ID` | your `AKIA…` access key |
+| `AWS_SECRET_ACCESS_KEY` | the matching secret key |
+| `AWS_CLOUDFRONT_DISTRIBUTION_ID` | optional; portfolio CloudFront ID only |
 
-Then merge the deploy PR (or re-run the workflow on `main`).
+Edit: https://github.com/tjprohammer/portfolio/settings/environments
+
+On that environment page, under **Environment secrets**, add both secrets
+above (same values as `tjprohammer-us`). Do **not** reuse the photo
+CloudFront ID `E31AR5COOJWOTE`.
+
+Then merge the deploy PR (or re-run **Deploy portfolio** on `main`).
 
 ### IAM permissions needed
 

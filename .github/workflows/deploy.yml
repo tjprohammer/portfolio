@@ -21,6 +21,9 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Secrets live on this GitHub Environment (Settings → Environments).
+    # Inside it, secret NAMES must be AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+    environment: AWS_ACCESS_KEY_ID
     steps:
       - name: Checkout
         uses: actions/checkout@v4
