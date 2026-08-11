@@ -28,7 +28,9 @@ const roles = [
         title: 'IT Support Specialist',
         dates: 'Oct 2020 — Jul 2023',
         points: [
-            'Imaged, deployed, and patched Windows endpoints to keep firm devices compliant and up to date.'
+            'Supported attorneys and staff day-to-day: troubleshooting workstations, printers, email, and office apps so legal work stayed unblocked.',
+            'Imaged and provisioned Windows PCs from USB media with firm presets and required software; repaired broken machines and kept endpoints patched and compliant.',
+            'Managed mailbox and calendar delegate access, and supported remote desktops via VMware Horizon for hybrid and remote staff.'
         ]
     }
 ];
@@ -43,8 +45,8 @@ function Experience() {
                     <span className="section__eyebrow">Experience</span>
                     <h2 className="section__title">Shipped systems, not just demos</h2>
                     <p className="section__intro">
-                        Five-plus years building full-stack and cloud platforms — from marketplace
-                        bookings to serverless commerce and auction settlement.
+                        Five-plus years shipping cloud platforms and keeping production systems —
+                        and the people who rely on them — running.
                     </p>
                 </header>
                 <div className="experience">
