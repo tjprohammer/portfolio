@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
+import SkillIcons from '../components/gridSkills/SkillIcons';
 
 const groups = [
     {
@@ -34,6 +35,7 @@ function Skills() {
                         documentation.
                     </p>
                 </header>
+                <SkillIcons />
                 <div className="skills">
                     {groups.map((group) => (
                         <div className="skill-group reveal" key={group.title}>
