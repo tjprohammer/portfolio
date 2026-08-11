@@ -187,9 +187,9 @@ a {
     inset: 0;
     background: linear-gradient(
         105deg,
-        rgba(243, 246, 244, 0.92) 0%,
-        rgba(243, 246, 244, 0.72) 42%,
-        rgba(15, 106, 95, 0.18) 100%
+        rgba(243, 246, 244, 0.9) 0%,
+        rgba(243, 246, 244, 0.55) 38%,
+        rgba(15, 106, 95, 0.12) 100%
     );
 }
 
@@ -197,7 +197,7 @@ a {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 55%, rgba(243, 246, 244, 0.85) 100%);
+    background: linear-gradient(180deg, transparent 60%, rgba(243, 246, 244, 0.75) 100%);
 }
 
 .hero__content {
@@ -462,7 +462,12 @@ a {
 .project--text {
     grid-template-columns: 1fr;
     direction: ltr;
-    padding: 1.5rem 0;
+    padding: 0.25rem 0 0.5rem;
+}
+
+.project + .project--text {
+    margin-top: 0.5rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--line);
 }
 

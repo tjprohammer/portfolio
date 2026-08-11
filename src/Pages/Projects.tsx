@@ -5,15 +5,6 @@ import photoWeb from '../../assets/tjprohammerweb.png';
 
 const projects = [
     {
-        title: 'Wild Network',
-        stack: 'React · Node · Firebase · PostGIS · Terraform · Stripe Connect · Vercel',
-        description:
-            'Host events marketplace with public discovery, host onboarding, slot-based booking, and Stripe Connect payouts. Multi-env AWS geospatial APIs and CI/CD promotion from staging to production.',
-        url: '',
-        image: '',
-        cta: ''
-    },
-    {
         title: 'The Alpine Studio',
         stack: 'React · TypeScript · Go · AWS Lambda · DynamoDB · Cognito · Stripe',
         description:
@@ -30,6 +21,15 @@ const projects = [
         url: 'https://photo.tjprohammer.us',
         image: photoWeb,
         cta: 'View gallery'
+    },
+    {
+        title: 'Wild Network',
+        stack: 'React · Node · Firebase · PostGIS · Terraform · Stripe Connect · Vercel',
+        description:
+            'Host events marketplace with public discovery, host onboarding, slot-based booking, and Stripe Connect payouts. Multi-env AWS geospatial APIs and CI/CD promotion from staging to production.',
+        url: '',
+        image: '',
+        cta: ''
     }
 ];
 
