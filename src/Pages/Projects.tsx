@@ -1,9 +1,19 @@
 import React from 'react';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
-import alpineWeb from '../../assets/thealpinestudioweb.png';
+import alpineWeb from '../../assets/alpine-studio.png';
+import wildNetwork from '../../assets/wild-network.png';
 import photoWeb from '../../assets/tjprohammerweb.png';
 
 const projects = [
+    {
+        title: 'Wild Network',
+        stack: 'React · Node · Firebase · PostGIS · Terraform · Stripe Connect · Vercel',
+        description:
+            'Outdoor discovery and host events marketplace — species/location search, geospatial map layers, host onboarding, slot-based booking, and Stripe Connect payouts. Multi-env Terraform and staging → production CI/CD.',
+        url: 'https://wildnetwork.app',
+        image: wildNetwork,
+        cta: 'Visit site'
+    },
     {
         title: 'The Alpine Studio',
         stack: 'React · TypeScript · Go · AWS Lambda · DynamoDB · Cognito · Stripe',
@@ -21,15 +31,6 @@ const projects = [
         url: 'https://photo.tjprohammer.us',
         image: photoWeb,
         cta: 'View gallery'
-    },
-    {
-        title: 'Wild Network',
-        stack: 'React · Node · Firebase · PostGIS · Terraform · Stripe Connect · Vercel',
-        description:
-            'Host events marketplace with public discovery, host onboarding, slot-based booking, and Stripe Connect payouts. Multi-env AWS geospatial APIs and CI/CD promotion from staging to production.',
-        url: '',
-        image: '',
-        cta: ''
     }
 ];
 
@@ -48,43 +49,27 @@ function Projects() {
                     </p>
                 </header>
                 <div className="projects">
-                    {projects.map((project) => {
-                        const hasImage = Boolean(project.image);
-                        return (
-                            <article
-                                className={`project reveal${hasImage ? '' : ' project--text'}`}
-                                key={project.title}>
-                                {hasImage && (
-                                    <div className="project__media">
-                                        {project.url ? (
-                                            <a
-                                                href={project.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer">
-                                                <img src={project.image} alt={project.title} />
-                                            </a>
-                                        ) : (
-                                            <img src={project.image} alt={project.title} />
-                                        )}
-                                    </div>
-                                )}
-                                <div className="project__body">
-                                    <h3>{project.title}</h3>
-                                    <p className="project__stack">{project.stack}</p>
-                                    <p>{project.description}</p>
-                                    {project.url && project.cta && (
-                                        <a
-                                            className="project__link"
-                                            href={project.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer">
-                                            {project.cta}
-                                        </a>
-                                    )}
-                                </div>
-                            </article>
-                        );
-                    })}
+                    {projects.map((project) => (
+                        <article className="project reveal" key={project.title}>
+                            <div className="project__media">
+                                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                                    <img src={project.image} alt={project.title} />
+                                </a>
+                            </div>
+                            <div className="project__body">
+                                <h3>{project.title}</h3>
+                                <p className="project__stack">{project.stack}</p>
+                                <p>{project.description}</p>
+                                <a
+                                    className="project__link"
+                                    href={project.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    {project.cta}
+                                </a>
+                            </div>
+                        </article>
+                    ))}
                 </div>
             </div>
         </section>
