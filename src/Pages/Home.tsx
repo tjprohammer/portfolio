@@ -18,8 +18,8 @@ function Home() {
                 <h1 className="hero__name">TJ Prohammer</h1>
                 <p className="hero__title">Software / Cloud Engineer</p>
                 <p className="hero__lede">
-                    Building and operating production systems on AWS and Vercel — serverless APIs,
-                    infrastructure as code, and reliable checkout flows.
+                    Problem solver in software and IT — building, fixing, and operating production
+                    systems. Nature photographer for 12+ years.
                 </p>
                 <div className="hero__actions">
                     <a className="btn btn--primary" href="#contact">
