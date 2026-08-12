@@ -25,7 +25,7 @@ resource "aws_s3_bucket_website_configuration" "s3_portfolio_website_bucket" {
   }
 
   error_document {
-    key = "error.html"
+    key = "404.html"
   }
 }
 
@@ -145,7 +145,7 @@ resource "aws_cloudfront_distribution" "portfolio_s3_distribution" {
   custom_error_response {
     error_caching_min_ttl = 0
     error_code            = 404
-    response_code         = 200
+    response_code         = 404
     response_page_path    = "/404.html"
   }
 
