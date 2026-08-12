@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
 
 const links = [
     { to: 'experience', label: 'Experience' },
@@ -22,15 +21,9 @@ function NavBar() {
     return (
         <header className={`nav${scrolled ? ' is-scrolled' : ''}`}>
             <div className="container nav__inner">
-                <Link
-                    className="nav__brand"
-                    to="home"
-                    smooth
-                    duration={500}
-                    offset={-72}
-                    onClick={() => setOpen(false)}>
+                <a className="nav__brand" href="#home" onClick={() => setOpen(false)}>
                     TJ Prohammer
-                </Link>
+                </a>
                 <button
                     className={`nav__toggle${open ? ' is-open' : ''}`}
                     type="button"
@@ -42,14 +35,9 @@ function NavBar() {
                 <ul className={`nav__links${open ? ' is-open' : ''}`}>
                     {links.map((link) => (
                         <li key={link.to}>
-                            <Link
-                                to={link.to}
-                                smooth
-                                duration={500}
-                                offset={-72}
-                                onClick={() => setOpen(false)}>
+                            <a href={`#${link.to}`} onClick={() => setOpen(false)}>
                                 {link.label}
-                            </Link>
+                            </a>
                         </li>
                     ))}
                 </ul>

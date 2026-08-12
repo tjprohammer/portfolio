@@ -1,15 +1,19 @@
 import React from 'react';
-import { Link } from 'react-scroll';
-import portrait from '../../assets/portrait.jpg';
+import portrait from '../../assets/portrait.webp';
 
 function Home() {
     return (
         <section className="hero" id="home">
-            <div
-                className="hero__bg"
-                aria-hidden="true"
-                style={{ backgroundImage: `url(${portrait})` }}
+            <img
+                className="hero__bg-img"
+                src={portrait}
+                alt=""
+                width={1600}
+                height={1600}
+                decoding="async"
+                {...{ fetchPriority: 'high' }}
             />
+            <div className="hero__bg" aria-hidden="true" />
             <div className="container hero__content">
                 <h1 className="hero__name">TJ Prohammer</h1>
                 <p className="hero__title">Software / Cloud Engineer</p>
@@ -18,9 +22,9 @@ function Home() {
                     infrastructure as code, and reliable checkout flows.
                 </p>
                 <div className="hero__actions">
-                    <Link className="btn btn--primary" to="contact" smooth duration={500} offset={-72}>
+                    <a className="btn btn--primary" href="#contact">
                         Get in touch
-                    </Link>
+                    </a>
                     <a
                         className="btn btn--ghost"
                         href="https://resume-tjprohammer.s3.amazonaws.com/TJ+Prohammer_Resumee.pdf"
