@@ -48,6 +48,7 @@
     --line: rgba(20, 36, 44, 0.1);
     --font-display: 'Bricolage Grotesque', Georgia, serif;
     --font-body: 'Figtree', system-ui, sans-serif;
+    --page-pad: clamp(1.15rem, 4.5vw, 1.5rem);
 }
 
 * {
@@ -58,10 +59,13 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
     min-height: 100vh;
+    min-height: 100dvh;
     font-family: var(--font-body);
     color: var(--ink);
     background: var(--paper);
@@ -83,14 +87,18 @@ body {
 .wrap {
     position: relative;
     z-index: 1;
-    width: min(34rem, calc(100% - 2.5rem));
+    width: min(34rem, 100%);
     margin: 0 auto;
-    padding: 4rem 0 5rem;
+    padding:
+        calc(3.5rem + env(safe-area-inset-top, 0px))
+        calc(var(--page-pad) + env(safe-area-inset-right, 0px))
+        calc(4.5rem + env(safe-area-inset-bottom, 0px))
+        calc(var(--page-pad) + env(safe-area-inset-left, 0px));
 }
 
 .intro {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.75rem;
     animation: rise 0.65s ease both;
 }
 
@@ -107,22 +115,25 @@ body {
 
 h1 {
     font-family: var(--font-display);
-    font-size: clamp(2.6rem, 9vw, 3.75rem);
+    font-size: clamp(2.35rem, 8.5vw, 3.75rem);
     font-weight: 700;
     letter-spacing: -0.04em;
-    line-height: 1;
+    line-height: 1.05;
     margin-bottom: 0.85rem;
+    overflow-wrap: anywhere;
 }
 
 .lede {
-    max-width: 24rem;
+    max-width: 22rem;
     margin: 0 auto;
     color: var(--ink-soft);
-    font-size: 1.02rem;
+    font-size: clamp(0.98rem, 3.6vw, 1.05rem);
+    line-height: 1.55;
+    text-wrap: pretty;
 }
 
 .group + .group {
-    margin-top: 2rem;
+    margin-top: 2.15rem;
 }
 
 .group {
@@ -157,26 +168,33 @@ h1 {
 
 .links a {
     display: grid;
-    gap: 0.1rem;
-    padding: 0.95rem 0.15rem;
+    align-content: center;
+    gap: 0.15rem;
+    min-height: 3.25rem;
+    padding: 0.95rem 0.35rem;
+    margin: 0 -0.35rem;
     border-bottom: 1px solid var(--line);
     text-decoration: none;
     color: inherit;
-    transition:
-        color 0.18s ease,
-        padding-left 0.18s ease;
+    -webkit-tap-highlight-color: rgba(15, 106, 95, 0.12);
+    touch-action: manipulation;
+    transition: color 0.18s ease, background-color 0.18s ease;
 }
 
 .links a:hover,
 .links a:focus-visible {
     color: var(--accent-deep);
-    padding-left: 0.4rem;
+    background-color: rgba(15, 106, 95, 0.06);
     outline: none;
+}
+
+.links a:active {
+    background-color: rgba(15, 106, 95, 0.1);
 }
 
 .link__title {
     font-family: var(--font-display);
-    font-size: 1.2rem;
+    font-size: clamp(1.1rem, 4.2vw, 1.22rem);
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -184,6 +202,7 @@ h1 {
 .link__meta {
     color: var(--muted);
     font-size: 0.9rem;
+    line-height: 1.35;
 }
 
 .links a:hover .link__meta,
@@ -204,17 +223,55 @@ h1 {
 
 @media (max-width: 600px) {
     .wrap {
-        padding: 3rem 0 4rem;
+        padding-top: calc(2.75rem + env(safe-area-inset-top, 0px));
+        padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .intro {
+        margin-bottom: 2.25rem;
     }
 
     .portrait {
         width: 4.75rem;
         height: 4.75rem;
-        margin-bottom: 1.15rem;
+        margin-bottom: 1.1rem;
     }
 
-    .link__title {
-        font-size: 1.12rem;
+    .group + .group {
+        margin-top: 1.85rem;
+    }
+
+    .links a {
+        min-height: 3.5rem;
+        padding: 1.05rem 0.45rem;
+        margin: 0 -0.45rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .lede {
+        max-width: 18.5rem;
+        font-size: 0.95rem;
+    }
+
+    .link__meta {
+        font-size: 0.85rem;
+    }
+}
+
+@media (hover: none) {
+    .links a:hover {
+        color: inherit;
+        background-color: transparent;
+    }
+
+    .links a:hover .link__meta {
+        color: var(--muted);
+    }
+
+    .links a:active {
+        color: var(--accent-deep);
+        background-color: rgba(15, 106, 95, 0.1);
     }
 }
 
