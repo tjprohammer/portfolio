@@ -62,7 +62,7 @@ module.exports = {
             apply(compiler) {
                 compiler.hooks.afterEmit.tap('CopyPublicSeoFiles', () => {
                     const outDir = path.join(__dirname, 'build');
-                    for (const file of ['robots.txt', 'sitemap.xml', 'og-image.jpg']) {
+                    for (const file of ['robots.txt', 'sitemap.xml', 'og-image.jpg', '404.html']) {
                         fs.copyFileSync(
                             path.join(__dirname, 'public', file),
                             path.join(outDir, file)
