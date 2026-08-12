@@ -1,0 +1,115 @@
+name: Deploy apex hub
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'hub/**'
+      - '.github/workflows/deploy-hub.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hub
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  AWS_REGION: us-west-2
+  S3_BUCKET: www.tjprohammer.us
+  SITE_DOMAIN: tjprohammer.us
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: AWS_ACCESS_KEY_ID
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Ensure S3 bucket exists
+        run: |
+          if aws s3api head-bucket --bucket "$S3_BUCKET" 2>/dev/null; then
+            echo "Bucket ${S3_BUCKET} exists"
+          else
+            echo "Creating bucket ${S3_BUCKET}"
+            aws s3api create-bucket \
+              --bucket "$S3_BUCKET" \
+              --region "$AWS_REGION" \
+              --create-bucket-configuration LocationConstraint="$AWS_REGION"
+
+            aws s3api put-public-access-block \
+              --bucket "$S3_BUCKET" \
+              --public-access-block-configuration \
+              BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false
+
+            aws s3api put-bucket-ownership-controls \
+              --bucket "$S3_BUCKET" \
+              --ownership-controls 'Rules=[{ObjectOwnership=BucketOwnerPreferred}]'
+
+            aws s3api put-bucket-website \
+              --bucket "$S3_BUCKET" \
+              --website-configuration '{
+                "IndexDocument": {"Suffix": "index.html"},
+                "ErrorDocument": {"Key": "404.html"}
+              }'
+
+            aws s3api put-bucket-policy --bucket "$S3_BUCKET" --policy "{
+              \"Version\": \"2012-10-17\",
+              \"Statement\": [{
+                \"Sid\": \"PublicReadGetObject\",
+                \"Effect\": \"Allow\",
+                \"Principal\": \"*\",
+                \"Action\": \"s3:GetObject\",
+                \"Resource\": \"arn:aws:s3:::${S3_BUCKET}/*\"
+              }]
+            }"
+          fi
+
+      - name: Sync hub to S3
+        run: |
+          aws s3 sync hub/ "s3://${S3_BUCKET}/" \
+            --delete \
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "*.html" \
+            --exclude "robots.txt" \
+            --exclude "sitemap.xml"
+
+          aws s3 sync hub/ "s3://${S3_BUCKET}/" \
+            --delete \
+            --cache-control "public, max-age=0, must-revalidate" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "robots.txt" \
+            --include "sitemap.xml"
+
+      - name: Invalidate CloudFront
+        env:
+          DISTRIBUTION_ID: ${{ secrets.AWS_APEX_CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          if [ -n "$DISTRIBUTION_ID" ]; then
+            DIST_ID="$DISTRIBUTION_ID"
+          else
+            DIST_ID="$(aws cloudfront list-distributions \
+              --query "DistributionList.Items[?Aliases.Items!=null && contains(Aliases.Items, '${SITE_DOMAIN}')].Id | [0]" \
+              --output text)"
+          fi
+
+          if [ -z "$DIST_ID" ] || [ "$DIST_ID" = "None" ]; then
+            echo "Could not resolve CloudFront distribution for ${SITE_DOMAIN}"
+            exit 1
+          fi
+
+          echo "Invalidating distribution ${DIST_ID}"
+          aws cloudfront create-invalidation \
+            --distribution-id "$DIST_ID" \
+            --paths "/*"

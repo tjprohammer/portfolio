@@ -3,11 +3,21 @@
 React + TypeScript + Webpack site hosted on S3 + CloudFront at
 [portfolio.tjprohammer.us](https://portfolio.tjprohammer.us).
 
+The apex hub at [tjprohammer.us](https://tjprohammer.us) lives in `hub/` and
+deploys separately to the existing CloudFront distribution (bucket
+`www.tjprohammer.us`).
+
 ## Local development
 
 ```bash
 npm install
 npm start
+```
+
+Preview the hub:
+
+```bash
+python3 -m http.server 5080 --directory hub
 ```
 
 ## Production build
@@ -22,6 +32,8 @@ Pushes to `main` deploy automatically via GitHub Actions
 (`.github/workflows/deploy.yml`) — same AWS key pattern as the
 `tjprohammer-us` photo site workflow.
 
+Hub changes under `hub/` deploy via `.github/workflows/deploy-hub.yml`.
+
 ### One-time setup: GitHub Environment secrets
 
 Deploy uses the GitHub Environment named `AWS_ACCESS_KEY_ID`
@@ -33,6 +45,7 @@ the **secret names inside it** must be:
 | `AWS_ACCESS_KEY_ID` | your `AKIA…` access key |
 | `AWS_SECRET_ACCESS_KEY` | the matching secret key |
 | `AWS_CLOUDFRONT_DISTRIBUTION_ID` | optional; portfolio CloudFront ID only |
+| `AWS_APEX_CLOUDFRONT_DISTRIBUTION_ID` | optional; apex `tjprohammer.us` distribution ID |
 
 Edit: https://github.com/tjprohammer/portfolio/settings/environments
 
