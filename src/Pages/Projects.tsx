@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
-import alpineWeb from '../../assets/alpine-studio.png';
-import wildNetwork from '../../assets/wild-network.png';
-import photoWeb from '../../assets/tjprohammerweb.png';
+import alpineWeb from '../../assets/alpine-studio.webp';
+import wildNetwork from '../../assets/wild-network.webp';
+import photoWeb from '../../assets/tjprohammerweb.webp';
 
 const projects = [
     {
@@ -53,7 +53,14 @@ function Projects() {
                         <article className="project reveal" key={project.title}>
                             <div className="project__media">
                                 <a href={project.url} target="_blank" rel="noopener noreferrer">
-                                    <img src={project.image} alt={project.title} />
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        loading="lazy"
+                                        decoding="async"
+                                        width={1280}
+                                        height={650}
+                                    />
                                 </a>
                             </div>
                             <div className="project__body">

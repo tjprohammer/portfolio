@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 type Skill = {
     name: string;
@@ -32,17 +32,42 @@ function iconUrl(slug: string) {
 }
 
 function SkillIcons() {
+    const ref = useRef<HTMLUListElement | null>(null);
+    const [active, setActive] = useState(false);
+
+    useEffect(() => {
+        const node = ref.current;
+        if (!node) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    setActive(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '200px 0px' }
+        );
+
+        observer.observe(node);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <ul className="skill-icons reveal">
+        <ul className="skill-icons reveal" ref={ref}>
             {skills.map((skill) => (
                 <li className="skill-icon" key={skill.name}>
                     <span
                         className="skill-icon__logo"
-                        style={{
-                            backgroundColor: skill.color,
-                            WebkitMaskImage: `url(${iconUrl(skill.slug)})`,
-                            maskImage: `url(${iconUrl(skill.slug)})`
-                        }}
+                        style={
+                            active
+                                ? {
+                                      backgroundColor: skill.color,
+                                      WebkitMaskImage: `url(${iconUrl(skill.slug)})`,
+                                      maskImage: `url(${iconUrl(skill.slug)})`
+                                  }
+                                : { backgroundColor: 'transparent' }
+                        }
                         aria-hidden="true"
                     />
                     <span>{skill.name}</span>
