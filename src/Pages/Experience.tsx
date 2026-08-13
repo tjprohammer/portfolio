@@ -4,7 +4,7 @@ import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 const roles = [
     {
         company: 'Vagabond Studio',
-        title: 'Full Stack Engineer',
+        title: 'Full Stack / Cloud Engineer',
         dates: 'Jan 2023 — Current',
         summary:
             'Building Wild Network — outdoor discovery, geospatial data, and a host events marketplace — from APIs through checkout and cloud infra.',
@@ -17,7 +17,7 @@ const roles = [
     },
     {
         company: 'The Alpine Studio',
-        title: 'Full Stack Engineer',
+        title: 'Full Stack / Cloud Engineer',
         dates: 'Feb 2019 — Oct 2023',
         summary:
             'Owned a serverless e-commerce and live-auction platform for an art business — storefront, admin, payments, and AWS infra as code.',
