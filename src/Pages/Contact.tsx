@@ -12,8 +12,8 @@ function Contact() {
                         <span className="section__eyebrow">Contact</span>
                         <h2 className="section__title">Let’s build something solid</h2>
                         <p className="section__intro">
-                            Open to cloud and full-stack roles — especially AWS, serverless, and
-                            platforms that need careful ops.
+                            Open to full-stack and cloud roles — especially AWS, serverless, and
+                            platforms that need careful ops and a steady problem solver.
                         </p>
                     </header>
                     <div className="contact reveal">
@@ -25,7 +25,15 @@ function Contact() {
                                 <a href="tel:+17325985266">(732) 598-5266</a>
                             </li>
                             <li>
-                                <span>Surprise, AZ</span>
+                                <span>Boulder, CO</span>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://portfolio.tjprohammer.us"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    portfolio.tjprohammer.us
+                                </a>
                             </li>
                             <li>
                                 <a

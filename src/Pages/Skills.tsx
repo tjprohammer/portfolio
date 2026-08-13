@@ -4,20 +4,20 @@ import SkillIcons from '../components/gridSkills/SkillIcons';
 
 const groups = [
     {
-        title: 'Languages',
-        items: 'TypeScript, JavaScript, Node.js, Golang, Python, Bash'
+        title: 'Languages & frameworks',
+        items: 'JavaScript, TypeScript, React.js, Node.js, Golang, Python, Bash'
     },
     {
-        title: 'Cloud & IaC',
-        items: 'AWS (Lambda, API Gateway, S3, CloudFront, DynamoDB, Cognito, IAM, CloudWatch, Route 53), Vercel, Terraform, GitHub Actions'
+        title: 'Cloud & infrastructure',
+        items: 'AWS (Lambda, API Gateway, S3, CloudFront, DynamoDB, Cognito, ECS, RDS, ElastiCache, IAM, CloudWatch, Route 53), Terraform, GitHub Actions, Vercel, Docker'
     },
     {
-        title: 'Backend',
-        items: 'REST APIs, serverless, authN/authZ, Stripe Connect webhooks, CI testing, logging & monitoring'
+        title: 'Data & backend',
+        items: 'PostgreSQL / PostGIS, Redis, DynamoDB, MongoDB, Firestore, REST APIs, OAuth2, serverless authN/authZ, Stripe / Stripe Connect'
     },
     {
-        title: 'Datastores',
-        items: 'DynamoDB, Firestore, PostGIS, Postgres/SQL, MongoDB'
+        title: 'Tools & collaboration',
+        items: 'Git, GitLab, GitHub Actions, Jira, Slack, Google Cloud, VMware Horizon, Agile / CI/CD workflows'
     }
 ];
 
@@ -29,10 +29,10 @@ function Skills() {
             <div className="container">
                 <header className="section__header reveal">
                     <span className="section__eyebrow">Skills</span>
-                    <h2 className="section__title">Tools I reach for daily</h2>
+                    <h2 className="section__title">Stacks and tools</h2>
                     <p className="section__intro">
-                        Strong in API design, SQL/NoSQL modeling, reliability, automation, and
-                        documentation.
+                        Daily drivers for full-stack product work, cloud platforms, and the
+                        operational glue that keeps them running.
                     </p>
                 </header>
                 <SkillIcons />
