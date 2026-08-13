@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const links = [
+    { to: 'about', label: 'About' },
     { to: 'experience', label: 'Experience' },
     { to: 'work', label: 'Work' },
     { to: 'skills', label: 'Skills' },

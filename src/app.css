@@ -374,6 +374,73 @@ a {
     font-size: 1.05rem;
 }
 
+/* About */
+.about {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(14rem, 0.9fr);
+    gap: 2.75rem 3.5rem;
+    align-items: start;
+}
+
+.about__copy {
+    display: grid;
+    gap: 1.1rem;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    max-width: 40rem;
+}
+
+.about__aside {
+    display: grid;
+    gap: 1.75rem;
+    padding-top: 0.15rem;
+}
+
+.about__block h3 {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.55rem;
+}
+
+.about__school {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+}
+
+.about__block p,
+.about__block li {
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+}
+
+.about__block ul {
+    list-style: none;
+    display: grid;
+    gap: 0.4rem;
+}
+
+.about__block li {
+    padding-left: 0.9rem;
+    position: relative;
+}
+
+.about__block li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.3rem;
+    height: 0.3rem;
+    background: var(--accent);
+}
+
 /* Experience */
 .experience {
     display: grid;
@@ -415,6 +482,12 @@ a {
 .job__dates {
     color: var(--muted);
     font-size: 0.95rem;
+}
+
+.job__summary {
+    color: var(--ink);
+    font-size: 1.02rem;
+    max-width: 46rem;
 }
 
 .job__points {
@@ -672,6 +745,11 @@ a {
 }
 
 @media (max-width: 860px) {
+    .about {
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+    }
+
     .project,
     .project:nth-child(even) {
         grid-template-columns: 1fr;
