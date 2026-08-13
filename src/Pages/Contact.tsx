@@ -45,7 +45,7 @@ function Contact() {
                             </li>
                             <li>
                                 <a
-                                    href="https://resume-tjprohammer.s3.amazonaws.com/TJ+Prohammer_Resumee.pdf"
+                                    href="https://resume-tjprohammer.s3.amazonaws.com/TJ+Prohammer_Resume.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer">
                                     Download resume
